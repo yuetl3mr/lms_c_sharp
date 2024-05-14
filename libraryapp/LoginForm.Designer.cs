@@ -72,7 +72,7 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(29, 202);
+            pictureBox2.Location = new Point(17, 199);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(23, 22);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -82,7 +82,7 @@
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(29, 277);
+            pictureBox3.Location = new Point(17, 274);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(23, 22);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
@@ -92,7 +92,7 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
-            panel1.Location = new Point(46, 307);
+            panel1.Location = new Point(46, 303);
             panel1.Name = "panel1";
             panel1.Size = new Size(190, 1);
             panel1.TabIndex = 5;
@@ -114,8 +114,8 @@
             // txtUserName
             // 
             txtUserName.Font = new Font("0xProto Nerd Font", 10.7999992F, FontStyle.Regular, GraphicsUnit.Point, 255);
-            txtUserName.ForeColor = Color.White;
-            txtUserName.Location = new Point(58, 197);
+            txtUserName.ForeColor = Color.FromArgb(0, 173, 181);
+            txtUserName.Location = new Point(46, 194);
             txtUserName.Name = "txtUserName";
             txtUserName.Size = new Size(207, 29);
             txtUserName.TabIndex = 8;
@@ -123,8 +123,8 @@
             // txtUserPassword
             // 
             txtUserPassword.Font = new Font("Arial", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtUserPassword.ForeColor = Color.White;
-            txtUserPassword.Location = new Point(58, 272);
+            txtUserPassword.ForeColor = Color.FromArgb(0, 173, 181);
+            txtUserPassword.Location = new Point(46, 269);
             txtUserPassword.Name = "txtUserPassword";
             txtUserPassword.Size = new Size(207, 28);
             txtUserPassword.TabIndex = 9;
@@ -132,7 +132,7 @@
             // panel2
             // 
             panel2.BackColor = Color.White;
-            panel2.Location = new Point(46, 232);
+            panel2.Location = new Point(46, 229);
             panel2.Name = "panel2";
             panel2.Size = new Size(190, 1);
             panel2.TabIndex = 6;

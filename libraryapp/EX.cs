@@ -12,6 +12,19 @@ namespace libraryapp
         public static List<Books> books = DBConnect.GetBooks();
         public static List<User> users = DBConnect.GetUsers();
         public static List<Loans> loans = DBConnect.GetLoans();
+        public static List<string> bookCategories = new List<string>
+        {
+            "Fiction",
+            "Non-fiction",
+            "Science Fiction",
+            "Fantasy",
+            "Mystery",
+            "Thriller",
+            "Biography",
+            "History",
+            "Self-help",
+            "Romance"
+        };
 
         public static int NewUserId()
         {
@@ -41,6 +54,14 @@ namespace libraryapp
         {
             return books.Count;
         }
-        
+        public static List<double> CountBookByCate()
+        {
+            List<double> counts = new List<double>(new double[10]);
+            foreach (var book in books)
+            {
+                counts[book.CategoryID - 1]++;
+            }
+            return counts;
+        }
     }
 }

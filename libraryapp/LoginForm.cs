@@ -61,8 +61,15 @@ namespace libraryapp
             if (user != null && PasswordManager.VerifyPassword(password, user.Password))
             {
 
-                this.Hide();
-                new Form1().Show();
+                if(EX.isAdmin(username))
+                {
+                    this.Hide();
+                    new AdminDashboard().Show();
+                }
+                else
+                {
+
+                }
 
             }
             else

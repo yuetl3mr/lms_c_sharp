@@ -8,11 +8,13 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Reflection.Metadata.BlobBuilder;
+
 
 namespace libraryapp
 {
 
-    public partial class Dashboard : Form
+    public partial class AdminDashboard : Form
     {
         bool sidebarExpand;
         bool homeContainerExpand;
@@ -27,12 +29,21 @@ namespace libraryapp
             int nHeightEllipse
         );
 
-        public Dashboard()
+        public AdminDashboard()
         {
             InitializeComponent();
             bookTotalLabel.Text = EX.BookTotal().ToString();
+            AddDataTable();
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+        }
+
+        private void AddDataTable()
+        {
+            foreach (var book in EX.books)
+            {
+                bookTable.Rows.Add(book.BookID, book.Name, book.Author, EX.bookCategories[book.CategoryID - 1]);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -101,6 +112,22 @@ namespace libraryapp
         private void button4_Click(object sender, EventArgs e)
         {
             LoanTimer.Start();
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            if (txtBookSearch != null)
+            {
+                bookTable.Rows.Clear();
+                var filteredBooks = EX.books.Where(b => b.BookID.ToString() == txtBookSearch.Text ||
+                                                 b.Name.Contains(txtBookSearch.Text) ||
+                                                 b.Author.Contains(txtBookSearch.Text));
+                foreach (var book in filteredBooks)
+                {
+                    bookTable.Rows.Add(book.BookID, book.Name, book.Author, EX.bookCategories[book.CategoryID - 1]);
+                }
+            }
+            else AddDataTable();
         }
     }
 }

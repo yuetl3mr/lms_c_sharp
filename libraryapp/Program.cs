@@ -12,7 +12,7 @@ namespace libraryapp
         {
             ApplicationConfiguration.Initialize();
             //Application.Run(new LoginForm());
-            Application.Run(new Dashboard());
+            Application.Run(new LoginForm());
         }
     }
 }

@@ -10,9 +10,9 @@ namespace libraryapp
     {
         public Books() { }
         public int BookID { get; set; }
-        public string? Name { get; set; }
-        public int? CategoryID { get; set; }
-        public string? Author { get; set; }
-        public DateTime? Publication {  get; set; }
+        public string Name { get; set; }
+        public int CategoryID { get; set; }
+        public string Author { get; set; }
+        public DateTime Publication {  get; set; }
     }
 }

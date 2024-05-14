@@ -1,6 +1,6 @@
 ﻿namespace libraryapp
 {
-    partial class Dashboard
+    partial class AdminDashboard
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,11 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminDashboard));
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             sidebar = new FlowLayoutPanel();
             panel1 = new Panel();
             label1 = new Label();
@@ -59,7 +63,15 @@
             label4 = new Label();
             label6 = new Label();
             label7 = new Label();
-            formsPlot1 = new ScottPlot.WinForms.FormsPlot();
+            backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
+            backgroundWorker3 = new System.ComponentModel.BackgroundWorker();
+            bookTable = new DataGridView();
+            BookIdColumn = new DataGridViewTextBoxColumn();
+            BookNameColumn = new DataGridViewTextBoxColumn();
+            BookAuthorColumn = new DataGridViewTextBoxColumn();
+            CategoryColumn = new DataGridViewTextBoxColumn();
+            txtBookSearch = new TextBox();
+            pictureBox4 = new PictureBox();
             sidebar.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -71,6 +83,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)bookTable).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             SuspendLayout();
             // 
             // sidebar
@@ -84,10 +98,10 @@
             sidebar.Dock = DockStyle.Left;
             sidebar.Location = new Point(0, 0);
             sidebar.Margin = new Padding(4, 3, 4, 3);
-            sidebar.MaximumSize = new Size(210, 450);
-            sidebar.MinimumSize = new Size(80, 450);
+            sidebar.MaximumSize = new Size(210, 474);
+            sidebar.MinimumSize = new Size(80, 474);
             sidebar.Name = "sidebar";
-            sidebar.Size = new Size(210, 450);
+            sidebar.Size = new Size(210, 474);
             sidebar.TabIndex = 0;
             // 
             // panel1
@@ -313,11 +327,11 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("0xProto Nerd Font Mono", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 255);
+            label2.Font = new Font("0xProto Nerd Font Mono", 24F, FontStyle.Bold, GraphicsUnit.Point, 255);
             label2.ForeColor = Color.FromArgb(238, 238, 238);
-            label2.Location = new Point(241, 35);
+            label2.Location = new Point(240, 46);
             label2.Name = "label2";
-            label2.Size = new Size(275, 53);
+            label2.Size = new Size(254, 48);
             label2.TabIndex = 1;
             label2.Text = "Wellcome!";
             // 
@@ -328,7 +342,7 @@
             panel5.Controls.Add(label5);
             panel5.Controls.Add(bookTotalLabel);
             panel5.Controls.Add(label3);
-            panel5.Location = new Point(241, 101);
+            panel5.Location = new Point(244, 130);
             panel5.Name = "panel5";
             panel5.Size = new Size(250, 125);
             panel5.TabIndex = 2;
@@ -382,7 +396,7 @@
             panel6.Controls.Add(label4);
             panel6.Controls.Add(label6);
             panel6.Controls.Add(label7);
-            panel6.Location = new Point(532, 101);
+            panel6.Location = new Point(535, 130);
             panel6.Name = "panel6";
             panel6.Size = new Size(250, 125);
             panel6.TabIndex = 4;
@@ -429,21 +443,110 @@
             label7.TabIndex = 0;
             label7.Text = "Users Total";
             // 
-            // formsPlot1
+            // bookTable
             // 
-            formsPlot1.DisplayScale = 1.25F;
-            formsPlot1.Location = new Point(241, 248);
-            formsPlot1.Name = "formsPlot1";
-            formsPlot1.Size = new Size(539, 177);
-            formsPlot1.TabIndex = 5;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(50, 55, 63);
+            dataGridViewCellStyle5.Font = new Font("Arial", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            bookTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            bookTable.BackgroundColor = Color.FromArgb(50, 55, 63);
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(50, 55, 63);
+            dataGridViewCellStyle6.Font = new Font("0xProto Nerd Font Mono", 7.79999971F, FontStyle.Bold, GraphicsUnit.Point, 255);
+            dataGridViewCellStyle6.ForeColor = Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.ButtonShadow;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
+            bookTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            bookTable.ColumnHeadersHeight = 29;
+            bookTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            bookTable.Columns.AddRange(new DataGridViewColumn[] { BookIdColumn, BookNameColumn, BookAuthorColumn, CategoryColumn });
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = Color.FromArgb(50, 55, 63);
+            dataGridViewCellStyle7.Font = new Font("Arial", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle7.ForeColor = Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = SystemColors.ButtonShadow;
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
+            bookTable.DefaultCellStyle = dataGridViewCellStyle7;
+            bookTable.EnableHeadersVisualStyles = false;
+            bookTable.Location = new Point(241, 275);
+            bookTable.Name = "bookTable";
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = SystemColors.Control;
+            dataGridViewCellStyle8.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle8.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
+            bookTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            bookTable.RowHeadersVisible = false;
+            bookTable.RowHeadersWidth = 51;
+            bookTable.Size = new Size(562, 152);
+            bookTable.TabIndex = 5;
+            // 
+            // BookIdColumn
+            // 
+            BookIdColumn.HeaderText = "ID";
+            BookIdColumn.MinimumWidth = 6;
+            BookIdColumn.Name = "BookIdColumn";
+            BookIdColumn.ReadOnly = true;
+            BookIdColumn.Resizable = DataGridViewTriState.False;
+            BookIdColumn.Width = 55;
+            // 
+            // BookNameColumn
+            // 
+            BookNameColumn.HeaderText = "Book Tile";
+            BookNameColumn.MinimumWidth = 6;
+            BookNameColumn.Name = "BookNameColumn";
+            BookNameColumn.ReadOnly = true;
+            BookNameColumn.Resizable = DataGridViewTriState.False;
+            BookNameColumn.Width = 200;
+            // 
+            // BookAuthorColumn
+            // 
+            BookAuthorColumn.HeaderText = "Author";
+            BookAuthorColumn.MinimumWidth = 6;
+            BookAuthorColumn.Name = "BookAuthorColumn";
+            BookAuthorColumn.ReadOnly = true;
+            BookAuthorColumn.Resizable = DataGridViewTriState.False;
+            BookAuthorColumn.Width = 150;
+            // 
+            // CategoryColumn
+            // 
+            CategoryColumn.HeaderText = "Category";
+            CategoryColumn.MinimumWidth = 6;
+            CategoryColumn.Name = "CategoryColumn";
+            CategoryColumn.ReadOnly = true;
+            CategoryColumn.Resizable = DataGridViewTriState.False;
+            CategoryColumn.Width = 130;
+            // 
+            // txtBookSearch
+            // 
+            txtBookSearch.Location = new Point(562, 68);
+            txtBookSearch.Name = "txtBookSearch";
+            txtBookSearch.Size = new Size(164, 25);
+            txtBookSearch.TabIndex = 6;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Location = new Point(732, 62);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(55, 32);
+            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox4.TabIndex = 7;
+            pictureBox4.TabStop = false;
+            pictureBox4.Click += pictureBox4_Click;
             // 
             // Dashboard
             // 
             AutoScaleDimensions = new SizeF(10F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(57, 62, 70);
-            ClientSize = new Size(822, 450);
-            Controls.Add(formsPlot1);
+            ClientSize = new Size(822, 474);
+            Controls.Add(pictureBox4);
+            Controls.Add(txtBookSearch);
+            Controls.Add(bookTable);
             Controls.Add(panel6);
             Controls.Add(panel5);
             Controls.Add(label2);
@@ -469,6 +572,8 @@
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)bookTable).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -504,6 +609,14 @@
         private Label label4;
         private Label label6;
         private Label label7;
-        private ScottPlot.WinForms.FormsPlot formsPlot1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker2;
+        private System.ComponentModel.BackgroundWorker backgroundWorker3;
+        private DataGridView bookTable;
+        private DataGridViewTextBoxColumn BookIdColumn;
+        private DataGridViewTextBoxColumn BookNameColumn;
+        private DataGridViewTextBoxColumn BookAuthorColumn;
+        private DataGridViewTextBoxColumn CategoryColumn;
+        private TextBox txtBookSearch;
+        private PictureBox pictureBox4;
     }
 }
