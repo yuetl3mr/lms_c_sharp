@@ -61,7 +61,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("0xProto Nerd Font Propo", 24F, FontStyle.Bold, GraphicsUnit.Point, 255);
-            label1.ForeColor = Color.FromArgb(255, 128, 0);
+            label1.ForeColor = Color.White;
             label1.Location = new Point(76, 99);
             label1.Name = "label1";
             label1.Size = new Size(150, 48);
@@ -91,7 +91,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(255, 128, 0);
+            panel1.BackColor = Color.White;
             panel1.Location = new Point(46, 307);
             panel1.Name = "panel1";
             panel1.Size = new Size(190, 1);
@@ -100,7 +100,7 @@
             // 
             // button1
             // 
-            button1.BackColor = Color.FromArgb(255, 128, 0);
+            button1.BackColor = Color.FromArgb(57, 62, 70);
             button1.Font = new Font("UD Digi Kyokasho N-B", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 128);
             button1.ForeColor = Color.Snow;
             button1.Location = new Point(29, 337);
@@ -114,7 +114,7 @@
             // txtUserName
             // 
             txtUserName.Font = new Font("0xProto Nerd Font", 10.7999992F, FontStyle.Regular, GraphicsUnit.Point, 255);
-            txtUserName.ForeColor = Color.FromArgb(255, 128, 0);
+            txtUserName.ForeColor = Color.White;
             txtUserName.Location = new Point(58, 197);
             txtUserName.Name = "txtUserName";
             txtUserName.Size = new Size(207, 29);
@@ -123,7 +123,7 @@
             // txtUserPassword
             // 
             txtUserPassword.Font = new Font("Arial", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtUserPassword.ForeColor = Color.FromArgb(255, 128, 0);
+            txtUserPassword.ForeColor = Color.White;
             txtUserPassword.Location = new Point(58, 272);
             txtUserPassword.Name = "txtUserPassword";
             txtUserPassword.Size = new Size(207, 28);
@@ -131,7 +131,7 @@
             // 
             // panel2
             // 
-            panel2.BackColor = Color.FromArgb(255, 128, 0);
+            panel2.BackColor = Color.White;
             panel2.Location = new Point(46, 232);
             panel2.Name = "panel2";
             panel2.Size = new Size(190, 1);
@@ -152,7 +152,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 7.20000029F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.FromArgb(255, 192, 128);
+            label3.ForeColor = Color.FromArgb(0, 173, 181);
             label3.Location = new Point(177, 383);
             label3.Name = "label3";
             label3.Size = new Size(52, 17);
@@ -164,6 +164,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe Script", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.White;
             label4.Location = new Point(262, -1);
             label4.Name = "label4";
             label4.Size = new Size(30, 33);
@@ -175,7 +176,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
+            BackColor = Color.FromArgb(57, 62, 70);
             ClientSize = new Size(290, 439);
             Controls.Add(label4);
             Controls.Add(label3);

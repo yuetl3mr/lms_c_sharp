@@ -50,7 +50,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("0xProto Nerd Font Mono", 16.1999989F, FontStyle.Bold, GraphicsUnit.Point, 255);
-            label1.ForeColor = Color.FromArgb(255, 128, 0);
+            label1.ForeColor = Color.White;
             label1.Location = new Point(12, 23);
             label1.Name = "label1";
             label1.Size = new Size(212, 32);
@@ -62,6 +62,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("UD Digi Kyokasho N-B", 9F, FontStyle.Bold, GraphicsUnit.Point, 128);
+            label2.ForeColor = Color.White;
             label2.Location = new Point(36, 89);
             label2.Name = "label2";
             label2.Size = new Size(72, 17);
@@ -88,6 +89,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("UD Digi Kyokasho N-B", 9F, FontStyle.Bold, GraphicsUnit.Point, 128);
+            label3.ForeColor = Color.White;
             label3.Location = new Point(36, 149);
             label3.Name = "label3";
             label3.Size = new Size(40, 17);
@@ -106,6 +108,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("UD Digi Kyokasho N-B", 9F, FontStyle.Bold, GraphicsUnit.Point, 128);
+            label4.ForeColor = Color.White;
             label4.Location = new Point(36, 211);
             label4.Name = "label4";
             label4.Size = new Size(72, 17);
@@ -124,6 +127,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("UD Digi Kyokasho N-B", 9F, FontStyle.Bold, GraphicsUnit.Point, 128);
+            label5.ForeColor = Color.White;
             label5.Location = new Point(36, 271);
             label5.Name = "label5";
             label5.Size = new Size(136, 17);
@@ -142,6 +146,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("UD Digi Kyokasho N-B", 9F, FontStyle.Bold, GraphicsUnit.Point, 128);
+            label6.ForeColor = Color.White;
             label6.Location = new Point(36, 330);
             label6.Name = "label6";
             label6.Size = new Size(64, 17);
@@ -150,7 +155,7 @@
             // 
             // button1
             // 
-            button1.BackColor = Color.FromArgb(255, 128, 0);
+            button1.BackColor = Color.FromArgb(57, 62, 70);
             button1.Font = new Font("UD Digi Kyokasho N-B", 10.2F, FontStyle.Bold);
             button1.ForeColor = Color.White;
             button1.Location = new Point(49, 437);
@@ -165,6 +170,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("UD Digi Kyokasho N-B", 9F, FontStyle.Bold, GraphicsUnit.Point, 128);
+            label7.ForeColor = Color.White;
             label7.Location = new Point(36, 395);
             label7.Name = "label7";
             label7.Size = new Size(56, 17);
@@ -176,6 +182,7 @@
             // 
             maleButton.AutoSize = true;
             maleButton.Font = new Font("UD Digi Kyokasho N-B", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 128);
+            maleButton.ForeColor = Color.White;
             maleButton.Location = new Point(116, 395);
             maleButton.Name = "maleButton";
             maleButton.Size = new Size(56, 19);
@@ -188,6 +195,7 @@
             // 
             femaleButton.AutoSize = true;
             femaleButton.Font = new Font("UD Digi Kyokasho N-B", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 128);
+            femaleButton.ForeColor = Color.White;
             femaleButton.Location = new Point(179, 395);
             femaleButton.Name = "femaleButton";
             femaleButton.Size = new Size(70, 19);
@@ -200,6 +208,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe Script", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.ForeColor = SystemColors.ButtonHighlight;
             label8.Location = new Point(272, -1);
             label8.Name = "label8";
             label8.Size = new Size(30, 33);
@@ -211,7 +220,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
+            BackColor = Color.FromArgb(57, 62, 70);
             ClientSize = new Size(303, 491);
             Controls.Add(label8);
             Controls.Add(femaleButton);

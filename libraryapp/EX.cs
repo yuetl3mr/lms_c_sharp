@@ -37,6 +37,10 @@ namespace libraryapp
             }
             return false;
         }
+        public static int BookTotal()
+        {
+            return books.Count;
+        }
         
     }
 }
