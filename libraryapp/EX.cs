@@ -35,6 +35,19 @@ namespace libraryapp
             }
             return maxid + 1;
         }
+
+        public static int NewLoanId()
+        {
+            int maxid = 0;
+            foreach (var loan in loans)
+            {
+                maxid = Math.Max(maxid, loan.LoanID);
+            }
+            return maxid + 1;
+        }
+
+
+
         public static bool ValidUsername(string userName) { 
             foreach (var user in users)
             {
@@ -53,15 +66,69 @@ namespace libraryapp
         public static int BookTotal()
         {
             return books.Count;
+            
         }
-        public static List<double> CountBookByCate()
+        public static int UserTotal()
         {
-            List<double> counts = new List<double>(new double[10]);
+            return users.Count;
+            
+        }
+        public static int UserIndex(int uid)
+        {
+            int index = 0;
+            foreach (var user in users)
+            {
+                if (user.Uid == uid)
+                {
+                    return index;
+                }
+                index++;
+            }
+            return -1;
+        }
+
+        public static int LoanIndex(int loanid)
+        {
+            int index = 0;
+            foreach (var loan in loans)
+            {
+                if (loan.LoanID == loanid)
+                {
+                    return index;
+                }
+                index++;
+            }
+            return -1;
+        }
+
+        public static int BookIndex(int bookid)
+        {
+            int index = 0;
             foreach (var book in books)
             {
-                counts[book.CategoryID - 1]++;
+                if (book.BookID == bookid)
+                {
+                    return index;
+                }
+                index++;
             }
-            return counts;
+            return -1;
+        }
+        public static void addLoan(int bookid, int userid) {
+            loans.Add(new Loans(NewLoanId(), userid, bookid));
+            books[BookIndex(bookid)].Number--;
+            DBConnect.AddLoans(loans.Last());
+        }
+        public static void addReturn(int loanid)
+        {
+            int index = LoanIndex(loanid);
+            if (index != -1)
+            {
+                loans[index].ReturnTime = DateTime.Now;
+                DBConnect.AddReturn(loanid);
+            }
+          
+           
         }
     }
 }

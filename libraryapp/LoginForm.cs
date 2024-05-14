@@ -64,7 +64,7 @@ namespace libraryapp
                 if(EX.isAdmin(username))
                 {
                     this.Hide();
-                    new AdminDashboard().Show();
+                    new AdminPanel().Show();
                 }
                 else
                 {

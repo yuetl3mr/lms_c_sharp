@@ -12,6 +12,7 @@ namespace libraryapp
         public int BookID { get; set; }
         public string Name { get; set; }
         public int CategoryID { get; set; }
+        public int Number { get; set; }
         public string Author { get; set; }
         public DateTime Publication {  get; set; }
     }

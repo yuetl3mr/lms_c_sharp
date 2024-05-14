@@ -54,9 +54,11 @@ namespace libraryapp
                     {
                         BookID = Convert.ToInt32(reader["BookID"]),
                         Name = reader["bName"].ToString(),
+                        Number = Convert.ToInt32(reader["Number"]),
                         CategoryID = Convert.ToInt32(reader["CategoryID"]),
                         Author = reader["bAuthor"].ToString(),
                         Publication = reader.GetDateTime(reader.GetOrdinal("bPublication")).Date
+
                     };
                     books.Add(book);
                 }
@@ -76,16 +78,33 @@ namespace libraryapp
                 SqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    Loans loan = new Loans
+                    bool isNull = reader.IsDBNull(reader.GetOrdinal("ReturnTime"));
+                    if (isNull) { 
+                        Loans loan = new Loans
+                        {
+                            LoanID = Convert.ToInt32(reader["LoanID"]),
+                            BookID = Convert.ToInt32(reader["BookID"]),
+                            UserID = Convert.ToInt32(reader["UserID"]),
+                            BorrowTime = reader.GetDateTime(reader.GetOrdinal("BorrowTime")).Date,
+                            DueTime = reader.GetDateTime(reader.GetOrdinal("DueTime")).Date,
+                            //ReturnTime = reader.GetDateTime(reader.GetOrdinal("ReturnTime")).Date
+                        };
+                        loans.Add(loan);
+                    }
+                    else
                     {
-                        LoanID = Convert.ToInt32(reader["LoanID"]),
-                        BookID = Convert.ToInt32(reader["BookID"]),
-                        UserID = Convert.ToInt32(reader["UserID"]),
-                        BorrowTime = reader.GetDateTime(reader.GetOrdinal("BorrowTime")).Date,
-                        DueTime = reader.GetDateTime(reader.GetOrdinal("DueTime")).Date,
-                        ReturnTime = reader.GetDateTime(reader.GetOrdinal("ReturnTime")).Date
-                    };
-                    loans.Add(loan);
+                        Loans loan = new Loans
+                        {
+                            LoanID = Convert.ToInt32(reader["LoanID"]),
+                            BookID = Convert.ToInt32(reader["BookID"]),
+                            UserID = Convert.ToInt32(reader["UserID"]),
+                            BorrowTime = reader.GetDateTime(reader.GetOrdinal("BorrowTime")).Date,
+                            DueTime = reader.GetDateTime(reader.GetOrdinal("DueTime")).Date,
+                            ReturnTime = reader.GetDateTime(reader.GetOrdinal("ReturnTime")).Date
+                        };
+                        loans.Add(loan);
+                    }
+                    
                 }
                 reader.Close();
             }
@@ -121,10 +140,11 @@ namespace libraryapp
                 connection.Open();
                 foreach (Books book in books)
                 {
-                    string query = "INSERT INTO Books (bName, CategoryID, bAuthor, bPublication) VALUES (@Name, @CategoryID, @Author, @Publication)";
+                    string query = "INSERT INTO Books (bName, CategoryID, bAuthor, Number, bPublication) VALUES (@Name, @CategoryID, @Author, @Number, @Publication)";
                     SqlCommand command = new SqlCommand(query, connection);
                     command.Parameters.AddWithValue("@Name", book.Name);
-                    command.Parameters.AddWithValue("@CategoryID", book.CategoryID);
+                    command.Parameters.AddWithValue("@CategoryID", book.CategoryID);                    command.Parameters.AddWithValue("@CategoryID", book.CategoryID);
+                    command.Parameters.AddWithValue("@Number", book.Number);
                     command.Parameters.AddWithValue("@Author", book.Author);
                     command.Parameters.AddWithValue("@Publication", book.Publication);
                     command.ExecuteNonQuery();
@@ -132,26 +152,38 @@ namespace libraryapp
             }
         }
 
-        public static void AddLoans(List<Loans> loans)
+        public static void AddLoans(Loans loan)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                connection.Open();
-                foreach (Loans loan in loans)
-                {
-                    string query = "INSERT INTO Loans (BookID, UserID, BorrowTime, DueTime, ReturnTime) VALUES (@BookID, @UserID, @BorrowTime, @DueTime, @ReturnTime)";
+                    connection.Open();
+                    string query = "INSERT INTO Loans (LoanID ,BookID, UserID, BorrowTime, DueTime) VALUES (@LoanID ,@BookID, @UserID, @BorrowTime, @DueTime)";
                     SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@LoanID", loan.LoanID);
                     command.Parameters.AddWithValue("@BookID", loan.BookID);
                     command.Parameters.AddWithValue("@UserID", loan.UserID);
                     command.Parameters.AddWithValue("@BorrowTime", loan.BorrowTime);
                     command.Parameters.AddWithValue("@DueTime", loan.DueTime);
-                    command.Parameters.AddWithValue("@ReturnTime", loan.ReturnTime);
+                    //command.Parameters.AddWithValue("@ReturnTime", loan.ReturnTime);
                     command.ExecuteNonQuery();
-                }
             }
         }
-
         
+        public static void AddReturn(int loanid)
+        {
+            DateTime returntime = DateTime.Now;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "UPDATE Loans SET ReturnTime = @ReturnTime WHERE LoanID = @LoanID";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@ReturnTime", returntime);
+                command.Parameters.AddWithValue("@LoanID", loanid);
+                command.ExecuteNonQuery();
+            }
+
+        }
+
 
 
     }
