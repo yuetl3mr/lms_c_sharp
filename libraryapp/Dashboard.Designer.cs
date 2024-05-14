@@ -43,6 +43,8 @@
             panel5 = new Panel();
             button4 = new Button();
             sidebarTimer = new System.Windows.Forms.Timer(components);
+            button5 = new Button();
+            button6 = new Button();
             sidebar.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -58,15 +60,15 @@
             sidebar.Controls.Add(panel1);
             sidebar.Controls.Add(panel2);
             sidebar.Controls.Add(panel3);
-            sidebar.Controls.Add(panel4);
             sidebar.Controls.Add(panel5);
+            sidebar.Controls.Add(panel4);
             sidebar.Dock = DockStyle.Left;
             sidebar.Location = new Point(0, 0);
             sidebar.Margin = new Padding(4, 3, 4, 3);
             sidebar.MaximumSize = new Size(210, 450);
             sidebar.MinimumSize = new Size(80, 450);
             sidebar.Name = "sidebar";
-            sidebar.Size = new Size(210, 450);
+            sidebar.Size = new Size(80, 450);
             sidebar.TabIndex = 0;
             // 
             // panel1
@@ -163,7 +165,7 @@
             // 
             panel4.BackColor = Color.FromArgb(255, 192, 128);
             panel4.Controls.Add(button3);
-            panel4.Location = new Point(4, 164);
+            panel4.Location = new Point(4, 206);
             panel4.Margin = new Padding(4, 3, 4, 3);
             panel4.Name = "panel4";
             panel4.Size = new Size(264, 36);
@@ -189,10 +191,14 @@
             // 
             // panel5
             // 
-            panel5.BackColor = Color.FromArgb(255, 192, 128);
+            panel5.BackColor = Color.FromArgb(35, 40, 45);
+            panel5.Controls.Add(button6);
+            panel5.Controls.Add(button5);
             panel5.Controls.Add(button4);
-            panel5.Location = new Point(4, 206);
+            panel5.Location = new Point(4, 164);
             panel5.Margin = new Padding(4, 3, 4, 3);
+            panel5.MaximumSize = new Size(264, 135);
+            panel5.MinimumSize = new Size(264, 36);
             panel5.Name = "panel5";
             panel5.Size = new Size(264, 36);
             panel5.TabIndex = 3;
@@ -200,18 +206,19 @@
             // button4
             // 
             button4.BackColor = Color.FromArgb(35, 40, 45);
+            button4.FlatAppearance.BorderSize = 0;
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("BIZ UDGothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button4.ForeColor = Color.Transparent;
-            button4.Image = Properties.Resources.execution;
+            button4.Image = Properties.Resources.open_book;
             button4.ImageAlign = ContentAlignment.MiddleLeft;
-            button4.Location = new Point(-4, -8);
+            button4.Location = new Point(-4, -7);
             button4.Margin = new Padding(4, 3, 4, 3);
             button4.Name = "button4";
             button4.Padding = new Padding(20, 0, 0, 0);
             button4.Size = new Size(339, 52);
             button4.TabIndex = 2;
-            button4.Text = "       Book Manage";
+            button4.Text = "       Loan Manage";
             button4.TextAlign = ContentAlignment.MiddleLeft;
             button4.UseVisualStyleBackColor = false;
             // 
@@ -219,6 +226,44 @@
             // 
             sidebarTimer.Interval = 10;
             sidebarTimer.Tick += timer1_Tick;
+            // 
+            // button5
+            // 
+            button5.BackColor = Color.FromArgb(50, 60, 65);
+            button5.FlatAppearance.BorderSize = 0;
+            button5.FlatStyle = FlatStyle.Flat;
+            button5.Font = new Font("BIZ UDGothic", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button5.ForeColor = Color.Transparent;
+            button5.Image = (Image)resources.GetObject("button5.Image");
+            button5.ImageAlign = ContentAlignment.MiddleLeft;
+            button5.Location = new Point(0, 45);
+            button5.Margin = new Padding(4, 3, 4, 3);
+            button5.Name = "button5";
+            button5.Padding = new Padding(50, 0, 0, 0);
+            button5.Size = new Size(264, 46);
+            button5.TabIndex = 3;
+            button5.Text = "       Books Borrow";
+            button5.TextAlign = ContentAlignment.MiddleLeft;
+            button5.UseVisualStyleBackColor = false;
+            // 
+            // button6
+            // 
+            button6.BackColor = Color.FromArgb(50, 60, 65);
+            button6.FlatAppearance.BorderSize = 0;
+            button6.FlatStyle = FlatStyle.Flat;
+            button6.Font = new Font("BIZ UDGothic", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button6.ForeColor = Color.Transparent;
+            button6.Image = (Image)resources.GetObject("button6.Image");
+            button6.ImageAlign = ContentAlignment.MiddleLeft;
+            button6.Location = new Point(0, 88);
+            button6.Margin = new Padding(4, 3, 4, 3);
+            button6.Name = "button6";
+            button6.Padding = new Padding(50, 0, 0, 0);
+            button6.Size = new Size(339, 47);
+            button6.TabIndex = 4;
+            button6.Text = "       Books Return";
+            button6.TextAlign = ContentAlignment.MiddleLeft;
+            button6.UseVisualStyleBackColor = false;
             // 
             // Dashboard
             // 
@@ -260,5 +305,7 @@
         private Label label1;
         private PictureBox pictureBox1;
         private System.Windows.Forms.Timer sidebarTimer;
+        private Button button6;
+        private Button button5;
     }
 }
