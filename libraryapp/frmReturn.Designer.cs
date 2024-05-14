@@ -35,15 +35,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReturn));
             label2 = new Label();
             bookTable = new DataGridView();
-            label6 = new Label();
-            pictureBox1 = new PictureBox();
-            txtUserSearch = new TextBox();
-            button1 = new Button();
             LoanIdColumn = new DataGridViewTextBoxColumn();
             BookIdColumn = new DataGridViewTextBoxColumn();
             UserIdColumn = new DataGridViewTextBoxColumn();
             DueTimeColumn = new DataGridViewTextBoxColumn();
             LoanSelect = new DataGridViewCheckBoxColumn();
+            label6 = new Label();
+            pictureBox1 = new PictureBox();
+            txtUserSearch = new TextBox();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)bookTable).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -88,7 +88,7 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             bookTable.DefaultCellStyle = dataGridViewCellStyle3;
             bookTable.EnableHeadersVisualStyles = false;
-            bookTable.Location = new Point(33, 205);
+            bookTable.Location = new Point(98, 203);
             bookTable.Name = "bookTable";
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = SystemColors.Control;
@@ -102,48 +102,6 @@
             bookTable.RowHeadersWidth = 51;
             bookTable.Size = new Size(542, 148);
             bookTable.TabIndex = 20;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("0xProto Nerd Font Mono", 12F, FontStyle.Bold, GraphicsUnit.Point, 255);
-            label6.ForeColor = Color.FromArgb(0, 173, 181);
-            label6.Location = new Point(142, 152);
-            label6.Name = "label6";
-            label6.Size = new Size(179, 24);
-            label6.TabIndex = 26;
-            label6.Text = "Borrowed List";
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(543, 148);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(32, 33);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 25;
-            pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
-            // 
-            // txtUserSearch
-            // 
-            txtUserSearch.Location = new Point(384, 152);
-            txtUserSearch.Name = "txtUserSearch";
-            txtUserSearch.Size = new Size(153, 27);
-            txtUserSearch.TabIndex = 24;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.FromArgb(57, 62, 70);
-            button1.Font = new Font("0xProto Nerd Font", 9F, FontStyle.Regular, GraphicsUnit.Point, 255);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(198, 389);
-            button1.Name = "button1";
-            button1.Size = new Size(168, 38);
-            button1.TabIndex = 27;
-            button1.Text = "Confirm Return";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
             // 
             // LoanIdColumn
             // 
@@ -189,12 +147,54 @@
             LoanSelect.Name = "LoanSelect";
             LoanSelect.Width = 30;
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("0xProto Nerd Font Mono", 12F, FontStyle.Bold, GraphicsUnit.Point, 255);
+            label6.ForeColor = Color.FromArgb(0, 173, 181);
+            label6.Location = new Point(142, 152);
+            label6.Name = "label6";
+            label6.Size = new Size(179, 24);
+            label6.TabIndex = 26;
+            label6.Text = "Borrowed List";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(543, 148);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(32, 33);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 25;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
+            // 
+            // txtUserSearch
+            // 
+            txtUserSearch.Location = new Point(384, 152);
+            txtUserSearch.Name = "txtUserSearch";
+            txtUserSearch.Size = new Size(153, 27);
+            txtUserSearch.TabIndex = 24;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(57, 62, 70);
+            button1.Font = new Font("0xProto Nerd Font", 9F, FontStyle.Regular, GraphicsUnit.Point, 255);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(283, 394);
+            button1.Name = "button1";
+            button1.Size = new Size(168, 38);
+            button1.TabIndex = 27;
+            button1.Text = "Confirm Return";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
             // frmReturn
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(57, 62, 70);
-            ClientSize = new Size(615, 474);
+            ClientSize = new Size(744, 474);
             Controls.Add(button1);
             Controls.Add(label6);
             Controls.Add(pictureBox1);

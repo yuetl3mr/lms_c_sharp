@@ -657,7 +657,7 @@
     <value>80, 474</value>
   </data>
   <data name="sidebar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 474</value>
+    <value>80, 474</value>
   </data>
   <data name="sidebar.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -675,10 +675,10 @@
     <value>0</value>
   </data>
   <data name="formLoader.Location" type="System.Drawing.Point, System.Drawing">
-    <value>210, 0</value>
+    <value>79, 0</value>
   </data>
   <data name="formLoader.Size" type="System.Drawing.Size, System.Drawing">
-    <value>615, 474</value>
+    <value>744, 474</value>
   </data>
   <data name="formLoader.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>

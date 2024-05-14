@@ -66,6 +66,10 @@ namespace libraryapp
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             sidebarTimer.Start();
+            if (homeContainerExpand)
+            {
+                LoanTimer.Start();
+            }
         }
 
         private void button4_Click_1(object sender, EventArgs e)

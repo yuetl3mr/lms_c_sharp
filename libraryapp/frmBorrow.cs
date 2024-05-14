@@ -50,11 +50,14 @@ namespace libraryapp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int UserIndex = EX.UserIndex(int.Parse(txtUserSearch.Text));
-            if (UserIndex != -1)
+            if (txtBookSearch != null)
             {
-                UserNameLabel.Text = EX.users[UserIndex].UserLogin;
-                NameLabel.Text = EX.users[UserIndex].Name;
+                int UserIndex = EX.UserIndex(int.Parse(txtUserSearch.Text));
+                if (UserIndex != -1)
+                {
+                    UserNameLabel.Text = EX.users[UserIndex].UserLogin;
+                    NameLabel.Text = EX.users[UserIndex].Name;
+                }
             }
         }
 

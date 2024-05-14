@@ -11,8 +11,8 @@ namespace libraryapp
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            //Application.Run(new LoginForm());
-            Application.Run(new AdminPanel());
+            Application.Run(new LoginForm());
+            //Application.Run(new AdminPanel());
         }
     }
 }

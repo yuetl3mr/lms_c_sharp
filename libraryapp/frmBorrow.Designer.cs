@@ -56,7 +56,7 @@
             // 
             // txtBookSearch
             // 
-            txtBookSearch.Location = new Point(385, 125);
+            txtBookSearch.Location = new Point(445, 124);
             txtBookSearch.Name = "txtBookSearch";
             txtBookSearch.Size = new Size(153, 27);
             txtBookSearch.TabIndex = 13;
@@ -64,7 +64,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(544, 121);
+            pictureBox1.Location = new Point(604, 120);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(32, 33);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -88,7 +88,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("0xProto Nerd Font", 9F, FontStyle.Regular, GraphicsUnit.Point, 255);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(290, 333);
+            label1.Location = new Point(271, 333);
             label1.Name = "label1";
             label1.Size = new Size(107, 18);
             label1.TabIndex = 17;
@@ -99,7 +99,7 @@
             UserNameLabel.AutoSize = true;
             UserNameLabel.Font = new Font("0xProto Nerd Font", 9F);
             UserNameLabel.ForeColor = Color.White;
-            UserNameLabel.Location = new Point(403, 333);
+            UserNameLabel.Location = new Point(378, 333);
             UserNameLabel.Name = "UserNameLabel";
             UserNameLabel.Size = new Size(0, 18);
             UserNameLabel.TabIndex = 18;
@@ -133,7 +133,7 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             bookTable.DefaultCellStyle = dataGridViewCellStyle3;
             bookTable.EnableHeadersVisualStyles = false;
-            bookTable.Location = new Point(47, 160);
+            bookTable.Location = new Point(107, 169);
             bookTable.Name = "bookTable";
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = SystemColors.Control;
@@ -197,7 +197,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("0xProto Nerd Font", 9F);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(290, 366);
+            label4.Location = new Point(464, 333);
             label4.Name = "label4";
             label4.Size = new Size(71, 18);
             label4.TabIndex = 20;
@@ -208,14 +208,14 @@
             NameLabel.AutoSize = true;
             NameLabel.Font = new Font("0xProto Nerd Font", 9F);
             NameLabel.ForeColor = Color.White;
-            NameLabel.Location = new Point(367, 366);
+            NameLabel.Location = new Point(541, 333);
             NameLabel.Name = "NameLabel";
             NameLabel.Size = new Size(0, 18);
             NameLabel.TabIndex = 21;
             // 
             // txtUserSearch
             // 
-            txtUserSearch.Location = new Point(143, 333);
+            txtUserSearch.Location = new Point(107, 333);
             txtUserSearch.Name = "txtUserSearch";
             txtUserSearch.Size = new Size(125, 27);
             txtUserSearch.TabIndex = 22;
@@ -225,7 +225,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("0xProto Nerd Font Mono", 12F, FontStyle.Bold, GraphicsUnit.Point, 255);
             label6.ForeColor = Color.FromArgb(0, 173, 181);
-            label6.Location = new Point(104, 128);
+            label6.Location = new Point(164, 127);
             label6.Name = "label6";
             label6.Size = new Size(257, 24);
             label6.TabIndex = 23;
@@ -236,7 +236,7 @@
             button1.BackColor = Color.FromArgb(57, 62, 70);
             button1.Font = new Font("0xProto Nerd Font", 9F, FontStyle.Regular, GraphicsUnit.Point, 255);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(143, 366);
+            button1.Location = new Point(107, 366);
             button1.Name = "button1";
             button1.Size = new Size(61, 29);
             button1.TabIndex = 24;
@@ -262,7 +262,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(57, 62, 70);
-            ClientSize = new Size(615, 474);
+            ClientSize = new Size(744, 474);
             Controls.Add(btConfirm);
             Controls.Add(button1);
             Controls.Add(label6);

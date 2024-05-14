@@ -62,7 +62,7 @@
             // pictureBox4
             // 
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(518, 62);
+            pictureBox4.Location = new Point(577, 55);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(55, 32);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
@@ -72,7 +72,7 @@
             // 
             // txtBookSearch
             // 
-            txtBookSearch.Location = new Point(348, 68);
+            txtBookSearch.Location = new Point(407, 61);
             txtBookSearch.Name = "txtBookSearch";
             txtBookSearch.Size = new Size(164, 27);
             txtBookSearch.TabIndex = 12;
@@ -106,7 +106,7 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             bookTable.DefaultCellStyle = dataGridViewCellStyle3;
             bookTable.EnableHeadersVisualStyles = false;
-            bookTable.Location = new Point(27, 275);
+            bookTable.Location = new Point(86, 268);
             bookTable.Name = "bookTable";
             bookTable.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -165,7 +165,7 @@
             panel6.Controls.Add(label4);
             panel6.Controls.Add(UserTotalLb);
             panel6.Controls.Add(label7);
-            panel6.Location = new Point(321, 130);
+            panel6.Location = new Point(380, 123);
             panel6.Name = "panel6";
             panel6.Size = new Size(250, 125);
             panel6.TabIndex = 10;
@@ -219,7 +219,7 @@
             panel5.Controls.Add(pictureBox2);
             panel5.Controls.Add(label5);
             panel5.Controls.Add(label3);
-            panel5.Location = new Point(30, 130);
+            panel5.Location = new Point(89, 123);
             panel5.Name = "panel5";
             panel5.Size = new Size(250, 125);
             panel5.TabIndex = 9;
@@ -271,7 +271,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("0xProto Nerd Font Mono", 24F, FontStyle.Bold, GraphicsUnit.Point, 255);
             label2.ForeColor = Color.FromArgb(238, 238, 238);
-            label2.Location = new Point(26, 46);
+            label2.Location = new Point(85, 39);
             label2.Name = "label2";
             label2.Size = new Size(254, 48);
             label2.TabIndex = 8;
@@ -282,7 +282,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(57, 62, 70);
-            ClientSize = new Size(615, 474);
+            ClientSize = new Size(744, 474);
             Controls.Add(pictureBox4);
             Controls.Add(txtBookSearch);
             Controls.Add(bookTable);
