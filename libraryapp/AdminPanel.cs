@@ -186,7 +186,12 @@ namespace libraryapp
         private void button8_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new LoginForm().Show(); 
+            new LoginForm().Show();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            new frmAccount().Show();
         }
     }
 }

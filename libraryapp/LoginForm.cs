@@ -64,17 +64,20 @@ namespace libraryapp
                 if(EX.isAdmin(username))
                 {
                     this.Hide();
+                    EX.currentID = EX.GetID(username);
                     new AdminPanel().Show();
                 }
                 else
                 {
-
+                    this.Hide();
+                    EX.currentID = EX.GetID(username);
+                    new ReaderPanel().Show();
                 }
 
             }
             else
             {
-                MessageBox.Show("Wrong Username or Passoword");
+                MessageBox.Show("Wrong Username or Password");
             }
         }
 

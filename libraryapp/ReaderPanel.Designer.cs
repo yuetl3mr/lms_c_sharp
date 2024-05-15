@@ -1,6 +1,6 @@
 ﻿namespace libraryapp
 {
-    partial class AdminPanel
+    partial class ReaderPanel
     {
         /// <summary>
         /// Required designer variable.
@@ -29,37 +29,27 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminPanel));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReaderPanel));
             sidebar = new FlowLayoutPanel();
             panel1 = new Panel();
-            label1 = new Label();
             pictureBox1 = new PictureBox();
+            label1 = new Label();
             panel2 = new Panel();
             button1 = new Button();
             panel3 = new Panel();
             button2 = new Button();
-            LoanContainer = new Panel();
-            button7 = new Button();
-            button6 = new Button();
-            button5 = new Button();
-            button4 = new Button();
             panel4 = new Panel();
             button3 = new Button();
-            panel6 = new Panel();
-            button9 = new Button();
             panel5 = new Panel();
             button8 = new Button();
             formLoader = new Panel();
             sidebarTimer = new System.Windows.Forms.Timer(components);
-            LoanTimer = new System.Windows.Forms.Timer(components);
             sidebar.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
-            LoanContainer.SuspendLayout();
             panel4.SuspendLayout();
-            panel6.SuspendLayout();
             panel5.SuspendLayout();
             SuspendLayout();
             // 
@@ -69,48 +59,79 @@
             sidebar.Controls.Add(panel1);
             sidebar.Controls.Add(panel2);
             sidebar.Controls.Add(panel3);
-            sidebar.Controls.Add(LoanContainer);
             sidebar.Controls.Add(panel4);
-            sidebar.Controls.Add(panel6);
             sidebar.Controls.Add(panel5);
-            resources.ApplyResources(sidebar, "sidebar");
+            sidebar.Dock = DockStyle.Left;
+            sidebar.Location = new Point(0, 0);
+            sidebar.Margin = new Padding(4, 3, 4, 3);
+            sidebar.MaximumSize = new Size(210, 474);
+            sidebar.MinimumSize = new Size(80, 474);
             sidebar.Name = "sidebar";
+            sidebar.Size = new Size(80, 474);
+            sidebar.TabIndex = 2;
             // 
             // panel1
             // 
-            panel1.Controls.Add(label1);
             panel1.Controls.Add(pictureBox1);
-            resources.ApplyResources(panel1, "panel1");
+            panel1.Controls.Add(label1);
+            panel1.Location = new Point(4, 3);
+            panel1.Margin = new Padding(4, 3, 4, 3);
             panel1.Name = "panel1";
-            // 
-            // label1
-            // 
-            resources.ApplyResources(label1, "label1");
-            label1.ForeColor = Color.White;
-            label1.Name = "label1";
+            panel1.Size = new Size(264, 71);
+            panel1.TabIndex = 0;
             // 
             // pictureBox1
             // 
             pictureBox1.Cursor = Cursors.Hand;
             pictureBox1.Image = Properties.Resources.list__1_;
-            resources.ApplyResources(pictureBox1, "pictureBox1");
+            pictureBox1.ImeMode = ImeMode.NoControl;
+            pictureBox1.Location = new Point(18, 24);
             pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(36, 28);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("0xProto Nerd Font Mono", 10.7999992F, FontStyle.Bold);
+            label1.ForeColor = Color.White;
+            label1.ImeMode = ImeMode.NoControl;
+            label1.Location = new Point(75, 24);
+            label1.Name = "label1";
+            label1.Size = new Size(58, 22);
+            label1.TabIndex = 1;
+            label1.Text = "Menu";
             // 
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(255, 192, 128);
             panel2.Controls.Add(button1);
-            resources.ApplyResources(panel2, "panel2");
+            panel2.Location = new Point(4, 80);
+            panel2.Margin = new Padding(4, 3, 4, 3);
             panel2.Name = "panel2";
+            panel2.Size = new Size(264, 36);
+            panel2.TabIndex = 2;
             // 
             // button1
             // 
             button1.BackColor = Color.FromArgb(34, 40, 49);
-            resources.ApplyResources(button1, "button1");
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("BIZ UDGothic", 9F, FontStyle.Bold);
             button1.ForeColor = Color.Transparent;
+            button1.Image = (Image)resources.GetObject("button1.Image");
+            button1.ImageAlign = ContentAlignment.MiddleLeft;
+            button1.ImeMode = ImeMode.NoControl;
+            button1.Location = new Point(-4, -8);
+            button1.Margin = new Padding(4, 3, 4, 3);
             button1.Name = "button1";
+            button1.Padding = new Padding(20, 0, 0, 0);
+            button1.Size = new Size(339, 52);
+            button1.TabIndex = 2;
+            button1.Text = "       Home";
+            button1.TextAlign = ContentAlignment.MiddleLeft;
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
@@ -118,153 +139,123 @@
             // 
             panel3.BackColor = Color.FromArgb(255, 192, 128);
             panel3.Controls.Add(button2);
-            resources.ApplyResources(panel3, "panel3");
+            panel3.Location = new Point(4, 122);
+            panel3.Margin = new Padding(4, 3, 4, 3);
             panel3.Name = "panel3";
+            panel3.Size = new Size(264, 36);
+            panel3.TabIndex = 3;
             // 
             // button2
             // 
             button2.BackColor = Color.FromArgb(34, 40, 49);
-            resources.ApplyResources(button2, "button2");
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("BIZ UDGothic", 9F, FontStyle.Bold);
             button2.ForeColor = Color.Transparent;
-            button2.Image = Properties.Resources.open_book;
+            button2.Image = (Image)resources.GetObject("button2.Image");
+            button2.ImageAlign = ContentAlignment.MiddleLeft;
+            button2.ImeMode = ImeMode.NoControl;
+            button2.Location = new Point(-4, -8);
+            button2.Margin = new Padding(4, 3, 4, 3);
             button2.Name = "button2";
+            button2.Padding = new Padding(20, 0, 0, 0);
+            button2.Size = new Size(339, 52);
+            button2.TabIndex = 2;
+            button2.Text = "       Borrowed List";
+            button2.TextAlign = ContentAlignment.MiddleLeft;
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
-            // 
-            // LoanContainer
-            // 
-            LoanContainer.BackColor = Color.FromArgb(35, 40, 45);
-            LoanContainer.Controls.Add(button7);
-            LoanContainer.Controls.Add(button6);
-            LoanContainer.Controls.Add(button5);
-            LoanContainer.Controls.Add(button4);
-            resources.ApplyResources(LoanContainer, "LoanContainer");
-            LoanContainer.Name = "LoanContainer";
-            // 
-            // button7
-            // 
-            button7.BackColor = Color.FromArgb(50, 60, 65);
-            button7.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(button7, "button7");
-            button7.ForeColor = Color.Transparent;
-            button7.Name = "button7";
-            button7.UseVisualStyleBackColor = false;
-            button7.Click += button7_Click;
-            // 
-            // button6
-            // 
-            button6.BackColor = Color.FromArgb(50, 60, 65);
-            button6.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(button6, "button6");
-            button6.ForeColor = Color.Transparent;
-            button6.Name = "button6";
-            button6.UseVisualStyleBackColor = false;
-            button6.Click += button6_Click;
-            // 
-            // button5
-            // 
-            button5.BackColor = Color.FromArgb(50, 60, 65);
-            button5.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(button5, "button5");
-            button5.ForeColor = Color.Transparent;
-            button5.Name = "button5";
-            button5.UseVisualStyleBackColor = false;
-            button5.Click += button5_Click;
-            // 
-            // button4
-            // 
-            button4.BackColor = Color.FromArgb(34, 40, 49);
-            button4.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(button4, "button4");
-            button4.ForeColor = Color.Transparent;
-            button4.Image = Properties.Resources.book;
-            button4.Name = "button4";
-            button4.UseVisualStyleBackColor = false;
-            button4.Click += button4_Click_1;
             // 
             // panel4
             // 
             panel4.BackColor = Color.FromArgb(255, 192, 128);
             panel4.Controls.Add(button3);
-            resources.ApplyResources(panel4, "panel4");
+            panel4.Location = new Point(4, 164);
+            panel4.Margin = new Padding(4, 3, 4, 3);
             panel4.Name = "panel4";
+            panel4.Size = new Size(264, 36);
+            panel4.TabIndex = 3;
             // 
             // button3
             // 
             button3.BackColor = Color.FromArgb(34, 40, 49);
-            resources.ApplyResources(button3, "button3");
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("BIZ UDGothic", 9F, FontStyle.Bold);
             button3.ForeColor = Color.Transparent;
-            button3.Image = Properties.Resources.profile__1_;
+            button3.Image = (Image)resources.GetObject("button3.Image");
+            button3.ImageAlign = ContentAlignment.MiddleLeft;
+            button3.ImeMode = ImeMode.NoControl;
+            button3.Location = new Point(-4, -8);
+            button3.Margin = new Padding(4, 3, 4, 3);
             button3.Name = "button3";
+            button3.Padding = new Padding(20, 0, 0, 0);
+            button3.Size = new Size(339, 52);
+            button3.TabIndex = 2;
+            button3.Text = "       Account";
+            button3.TextAlign = ContentAlignment.MiddleLeft;
             button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
-            // 
-            // panel6
-            // 
-            panel6.BackColor = Color.FromArgb(255, 192, 128);
-            panel6.Controls.Add(button9);
-            resources.ApplyResources(panel6, "panel6");
-            panel6.Name = "panel6";
-            // 
-            // button9
-            // 
-            button9.BackColor = Color.FromArgb(34, 40, 49);
-            resources.ApplyResources(button9, "button9");
-            button9.ForeColor = Color.Transparent;
-            button9.Name = "button9";
-            button9.UseVisualStyleBackColor = false;
-            button9.Click += button9_Click;
             // 
             // panel5
             // 
             panel5.BackColor = Color.FromArgb(255, 192, 128);
             panel5.Controls.Add(button8);
-            resources.ApplyResources(panel5, "panel5");
+            panel5.Location = new Point(4, 206);
+            panel5.Margin = new Padding(4, 3, 4, 3);
             panel5.Name = "panel5";
+            panel5.Size = new Size(264, 36);
+            panel5.TabIndex = 5;
             // 
             // button8
             // 
             button8.BackColor = Color.FromArgb(34, 40, 49);
-            resources.ApplyResources(button8, "button8");
+            button8.FlatStyle = FlatStyle.Flat;
+            button8.Font = new Font("BIZ UDGothic", 9F, FontStyle.Bold);
             button8.ForeColor = Color.Transparent;
+            button8.Image = (Image)resources.GetObject("button8.Image");
+            button8.ImageAlign = ContentAlignment.MiddleLeft;
+            button8.ImeMode = ImeMode.NoControl;
+            button8.Location = new Point(-4, -8);
+            button8.Margin = new Padding(4, 3, 4, 3);
             button8.Name = "button8";
+            button8.Padding = new Padding(20, 0, 0, 0);
+            button8.Size = new Size(339, 52);
+            button8.TabIndex = 2;
+            button8.Text = "       Logout";
+            button8.TextAlign = ContentAlignment.MiddleLeft;
             button8.UseVisualStyleBackColor = false;
             button8.Click += button8_Click;
             // 
             // formLoader
             // 
-            formLoader.BackColor = Color.FromArgb(57, 62, 70);
-            resources.ApplyResources(formLoader, "formLoader");
+            formLoader.Location = new Point(79, 0);
             formLoader.Name = "formLoader";
+            formLoader.Size = new Size(744, 474);
+            formLoader.TabIndex = 3;
             // 
             // sidebarTimer
             // 
             sidebarTimer.Interval = 10;
             sidebarTimer.Tick += sidebarTimer_Tick;
             // 
-            // LoanTimer
+            // ReaderPanel
             // 
-            LoanTimer.Interval = 10;
-            LoanTimer.Tick += LoanTimer_Tick;
-            // 
-            // AdminPanel
-            // 
-            resources.ApplyResources(this, "$this");
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(57, 62, 70);
+            ClientSize = new Size(822, 474);
             Controls.Add(sidebar);
             Controls.Add(formLoader);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "AdminPanel";
+            Name = "ReaderPanel";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "ReaderPanel";
             sidebar.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
-            LoanContainer.ResumeLayout(false);
             panel4.ResumeLayout(false);
-            panel6.ResumeLayout(false);
             panel5.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -275,23 +266,15 @@
         private Panel panel1;
         private Label label1;
         private PictureBox pictureBox1;
+        private System.Windows.Forms.Timer sidebarTimer;
         private Panel panel2;
         private Button button1;
         private Panel panel3;
         private Button button2;
-        private Panel LoanContainer;
-        private Button button7;
-        private Button button6;
-        private Button button5;
-        private Button button4;
         private Panel panel4;
         private Button button3;
-        private Panel formLoader;
-        private System.Windows.Forms.Timer sidebarTimer;
-        private System.Windows.Forms.Timer LoanTimer;
         private Panel panel5;
         private Button button8;
-        private Panel panel6;
-        private Button button9;
+        private Panel formLoader;
     }
 }

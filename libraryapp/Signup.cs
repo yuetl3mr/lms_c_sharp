@@ -44,7 +44,7 @@ namespace libraryapp
 
         private void label8_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             new LoginForm().Show();
         }
 
@@ -60,7 +60,7 @@ namespace libraryapp
                                  txtUserName.Text,
                                  PasswordManager.HashPassword(txtPassword.Text)
                                  , 0));
-                    DBConnect.AddUsers(EX.users.Last());
+                    DatabaseHandler.AddUsers(EX.users.Last());
                     MessageBox.Show("Success! Please Login to continue!");
                     this.Hide();
                     new LoginForm().Show();

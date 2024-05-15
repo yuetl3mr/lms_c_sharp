@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace libraryapp
 {
@@ -50,39 +51,46 @@ namespace libraryapp
                 bool isSelected = Convert.ToBoolean(row.Cells[5].Value);
                 if (isSelected)
                 {
-                    int bookId = Convert.ToInt32(row.Cells[0].Value);
-                    string? tile = row.Cells[1].Value?.ToString();
-                    string? author = row.Cells[2].Value?.ToString();
-                    int cate = Convert.ToInt32(row.Cells[3].Value);
-                    int number = 0;
-                    if (row.Cells[5].Value != null && row.Cells[4].Value != DBNull.Value && cate <= 10)
+                    
+                    try
                     {
-                        number = Convert.ToInt32(row.Cells[4].Value);
-                        if (tile != null && author != null)
+                        int bookId = Convert.ToInt32(row.Cells[0].Value);
+                        string? tile = row.Cells[1].Value?.ToString();
+                        string? author = row.Cells[2].Value?.ToString();
+                        int cate = Convert.ToInt32(row.Cells[3].Value);
+                        int number = 0;
+                        if (row.Cells[5].Value != null && row.Cells[4].Value != DBNull.Value && cate <= 10 && cate > 0)
                         {
-                            EX.UpdateBook(bookId, tile, author, cate, number);
-                            success = true;
+                            number = Convert.ToInt32(row.Cells[4].Value);
+                            if (tile != null && author != null)
+                            {
+                                EX.UpdateBook(bookId, tile, author, cate, number);
+                                success = true;
+                            }
+                            else
+                            {
+                                success = false;
+                                MessageBox.Show("Please re-check data!");
+                            }
                         }
                         else
                         {
                             success = false;
                             MessageBox.Show("Please re-check data!");
                         }
-                    }
-                    else
-                    {
+                        if (success)
+                        {
+                            MessageBox.Show("Edit Success!");
+                        }
+                    } 
+                    catch (Exception ex){
                         success = false;
-                        MessageBox.Show("Please re-check data!");
+                        MessageBox.Show("Re-check category!");
                     }
-
+                    AddDataTable();
                 }
             }
-            if (success)
-            {
-                MessageBox.Show("Edit Success!");
-            }
-            AddDataTable();
-
+            
         }
 
         private void btDelete_Click(object sender, EventArgs e)

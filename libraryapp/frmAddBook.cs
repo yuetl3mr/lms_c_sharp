@@ -24,6 +24,19 @@ namespace libraryapp
             string format = "dd/MM/yyyy";
             int number;
             DateTime date;
+            if (int.TryParse(txtCate.Text, out cate))
+            {
+                
+                if (cate >= 1 && cate <= 10)
+                {
+                    MessageBox.Show("Category ranges from 1 to 10");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please re-check data!");
+
+            }
 
             if (int.TryParse(txtQuan.Text, out number))
             {
@@ -46,7 +59,7 @@ namespace libraryapp
             else
             {
                 EX.books.Add(new Books(EX.NewBookId(), txtTitle.Text, cate, number, txtAuthor.Text, date));
-                DBConnect.AddBooks(EX.books.Last());
+                DatabaseHandler.AddBooks(EX.books.Last());
                 this.Hide();
             }
         }

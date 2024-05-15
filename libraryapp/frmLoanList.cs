@@ -20,12 +20,12 @@ namespace libraryapp
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            if (txtLoanSearch != null)
+            if (txtSearch != null)
             {
                 loanTable.Rows.Clear();
-                var filteredLoans = EX.loans.Where(l => (l.BookID.ToString() == txtLoanSearch.Text ||
-                                         l.LoanID.ToString() == txtLoanSearch.Text ||
-                                         l.UserID.ToString() == txtLoanSearch.Text));
+                var filteredLoans = EX.loans.Where(l => (l.BookID.ToString() == txtSearch.Text ||
+                                         l.LoanID.ToString() == txtSearch.Text ||
+                                         l.UserID.ToString() == txtSearch.Text));
                 foreach (var loan in filteredLoans)
                 {
                     loanTable.Rows.Add(loan.LoanID, loan.BookID, loan.UserID, loan.BorrowTime.Date, loan.ReturnTime);
@@ -43,6 +43,11 @@ namespace libraryapp
             {
                 loanTable.Rows.Add(loan.LoanID, loan.BookID, loan.UserID, loan.BorrowTime.Date, loan.ReturnTime);
             }
+
+        }
+
+        private void loanTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

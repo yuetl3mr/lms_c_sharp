@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 
 namespace libraryapp
 {
-    public class DBConnect
+    public class DatabaseHandler
     {
         static string connectionString = "Data Source=YUE_TL;Initial Catalog=libraryapp;Integrated Security=True";
         
@@ -194,6 +194,19 @@ namespace libraryapp
                 command.Parameters.AddWithValue("@Name", user.Name);
                 command.Parameters.AddWithValue("@Uid", user.Uid);
                 command.Parameters.AddWithValue("@Addr", user.Addr);
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public static void UpdatePassword(int userID, string pass)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "UPDATE Users SET UserPassword = @Pass WHERE UserID = @userID";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@Pass", pass);
+                command.Parameters.AddWithValue("@userID", userID);
                 command.ExecuteNonQuery();
             }
         }

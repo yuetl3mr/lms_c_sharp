@@ -1,6 +1,6 @@
 ﻿namespace libraryapp
 {
-    partial class frmLoanList
+    partial class frmBorrowedList
     {
         /// <summary>
         /// Required designer variable.
@@ -28,62 +28,62 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLoanList));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBorrowedList));
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             label2 = new Label();
             pictureBox1 = new PictureBox();
-            txtSearch = new TextBox();
-            loanTable = new DataGridView();
+            txtLoanSearch = new TextBox();
+            borrowedTable = new DataGridView();
             LoanIdColumn = new DataGridViewTextBoxColumn();
             BookIdColumn = new DataGridViewTextBoxColumn();
-            UserIdColumn = new DataGridViewTextBoxColumn();
             BorrowTimeColumn = new DataGridViewTextBoxColumn();
+            DueTimeColumn = new DataGridViewTextBoxColumn();
             ReturnTimeColumn = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)loanTable).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)borrowedTable).BeginInit();
             SuspendLayout();
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Nirmala UI", 24F, FontStyle.Bold);
+            label2.Font = new Font("Nirmala UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(238, 238, 238);
             label2.Location = new Point(43, 44);
             label2.Name = "label2";
-            label2.Size = new Size(188, 54);
-            label2.TabIndex = 18;
-            label2.Text = "Loan List";
+            label2.Size = new Size(283, 54);
+            label2.TabIndex = 17;
+            label2.Text = "Borrowed List";
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(668, 157);
+            pictureBox1.Location = new Point(692, 119);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(32, 33);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 30;
+            pictureBox1.TabIndex = 33;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
             // 
-            // txtSearch
+            // txtLoanSearch
             // 
-            txtSearch.Location = new Point(470, 162);
-            txtSearch.Name = "txtSearch";
-            txtSearch.Size = new Size(182, 27);
-            txtSearch.TabIndex = 29;
+            txtLoanSearch.Location = new Point(494, 124);
+            txtLoanSearch.Name = "txtLoanSearch";
+            txtLoanSearch.Size = new Size(182, 27);
+            txtLoanSearch.TabIndex = 32;
             // 
-            // loanTable
+            // borrowedTable
             // 
-            loanTable.AllowUserToAddRows = false;
-            loanTable.AllowUserToDeleteRows = false;
+            borrowedTable.AllowUserToAddRows = false;
+            borrowedTable.AllowUserToDeleteRows = false;
             dataGridViewCellStyle5.BackColor = Color.FromArgb(50, 55, 63);
             dataGridViewCellStyle5.Font = new Font("Arial", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(224, 224, 224);
-            loanTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            loanTable.BackgroundColor = Color.FromArgb(50, 55, 63);
+            borrowedTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            borrowedTable.BackgroundColor = Color.FromArgb(50, 55, 63);
             dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = Color.FromArgb(50, 55, 63);
             dataGridViewCellStyle6.Font = new Font("0xProto Nerd Font Mono", 7.79999971F, FontStyle.Bold, GraphicsUnit.Point, 255);
@@ -91,10 +91,10 @@
             dataGridViewCellStyle6.SelectionBackColor = SystemColors.ButtonShadow;
             dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-            loanTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            loanTable.ColumnHeadersHeight = 29;
-            loanTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            loanTable.Columns.AddRange(new DataGridViewColumn[] { LoanIdColumn, BookIdColumn, UserIdColumn, BorrowTimeColumn, ReturnTimeColumn });
+            borrowedTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            borrowedTable.ColumnHeadersHeight = 29;
+            borrowedTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            borrowedTable.Columns.AddRange(new DataGridViewColumn[] { LoanIdColumn, BookIdColumn, BorrowTimeColumn, DueTimeColumn, ReturnTimeColumn });
             dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = Color.FromArgb(50, 55, 63);
             dataGridViewCellStyle7.Font = new Font("Arial", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -102,10 +102,10 @@
             dataGridViewCellStyle7.SelectionBackColor = SystemColors.ButtonShadow;
             dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
-            loanTable.DefaultCellStyle = dataGridViewCellStyle7;
-            loanTable.EnableHeadersVisualStyles = false;
-            loanTable.Location = new Point(61, 207);
-            loanTable.Name = "loanTable";
+            borrowedTable.DefaultCellStyle = dataGridViewCellStyle7;
+            borrowedTable.EnableHeadersVisualStyles = false;
+            borrowedTable.Location = new Point(85, 169);
+            borrowedTable.Name = "borrowedTable";
             dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = SystemColors.Control;
             dataGridViewCellStyle8.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -113,12 +113,11 @@
             dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
-            loanTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            loanTable.RowHeadersVisible = false;
-            loanTable.RowHeadersWidth = 51;
-            loanTable.Size = new Size(639, 176);
-            loanTable.TabIndex = 28;
-            loanTable.CellContentClick += loanTable_CellContentClick;
+            borrowedTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            borrowedTable.RowHeadersVisible = false;
+            borrowedTable.RowHeadersWidth = 51;
+            borrowedTable.Size = new Size(639, 176);
+            borrowedTable.TabIndex = 31;
             // 
             // LoanIdColumn
             // 
@@ -126,6 +125,7 @@
             LoanIdColumn.HeaderText = "Loan";
             LoanIdColumn.MinimumWidth = 6;
             LoanIdColumn.Name = "LoanIdColumn";
+            LoanIdColumn.ReadOnly = true;
             LoanIdColumn.Resizable = DataGridViewTriState.False;
             LoanIdColumn.Width = 55;
             // 
@@ -135,17 +135,9 @@
             BookIdColumn.HeaderText = "Book";
             BookIdColumn.MinimumWidth = 6;
             BookIdColumn.Name = "BookIdColumn";
+            BookIdColumn.ReadOnly = true;
             BookIdColumn.Resizable = DataGridViewTriState.False;
             BookIdColumn.Width = 175;
-            // 
-            // UserIdColumn
-            // 
-            UserIdColumn.Frozen = true;
-            UserIdColumn.HeaderText = "User";
-            UserIdColumn.MinimumWidth = 6;
-            UserIdColumn.Name = "UserIdColumn";
-            UserIdColumn.Resizable = DataGridViewTriState.False;
-            UserIdColumn.Width = 130;
             // 
             // BorrowTimeColumn
             // 
@@ -153,8 +145,19 @@
             BorrowTimeColumn.HeaderText = "BorrowTime";
             BorrowTimeColumn.MinimumWidth = 6;
             BorrowTimeColumn.Name = "BorrowTimeColumn";
+            BorrowTimeColumn.ReadOnly = true;
             BorrowTimeColumn.Resizable = DataGridViewTriState.False;
             BorrowTimeColumn.Width = 125;
+            // 
+            // DueTimeColumn
+            // 
+            DueTimeColumn.Frozen = true;
+            DueTimeColumn.HeaderText = "DueTime";
+            DueTimeColumn.MinimumWidth = 6;
+            DueTimeColumn.Name = "DueTimeColumn";
+            DueTimeColumn.ReadOnly = true;
+            DueTimeColumn.Resizable = DataGridViewTriState.False;
+            DueTimeColumn.Width = 125;
             // 
             // ReturnTimeColumn
             // 
@@ -163,23 +166,24 @@
             ReturnTimeColumn.MinimumWidth = 6;
             ReturnTimeColumn.Name = "ReturnTimeColumn";
             ReturnTimeColumn.ReadOnly = true;
+            ReturnTimeColumn.Resizable = DataGridViewTriState.False;
             ReturnTimeColumn.Width = 125;
             // 
-            // frmLoanList
+            // frmBorrowedList
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(57, 62, 70);
-            ClientSize = new Size(744, 474);
+            ClientSize = new Size(800, 450);
             Controls.Add(pictureBox1);
-            Controls.Add(txtSearch);
-            Controls.Add(loanTable);
+            Controls.Add(txtLoanSearch);
+            Controls.Add(borrowedTable);
             Controls.Add(label2);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "frmLoanList";
-            Text = "frmLoanList";
+            Name = "frmBorrowedList";
+            Text = "frmBorrowedList";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)loanTable).EndInit();
+            ((System.ComponentModel.ISupportInitialize)borrowedTable).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -188,12 +192,12 @@
 
         private Label label2;
         private PictureBox pictureBox1;
-        private TextBox txtSearch;
-        private DataGridView loanTable;
+        private TextBox txtLoanSearch;
+        private DataGridView borrowedTable;
         private DataGridViewTextBoxColumn LoanIdColumn;
         private DataGridViewTextBoxColumn BookIdColumn;
-        private DataGridViewTextBoxColumn UserIdColumn;
         private DataGridViewTextBoxColumn BorrowTimeColumn;
+        private DataGridViewTextBoxColumn DueTimeColumn;
         private DataGridViewTextBoxColumn ReturnTimeColumn;
     }
 }

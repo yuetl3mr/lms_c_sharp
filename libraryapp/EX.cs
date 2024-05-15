@@ -10,10 +10,10 @@ namespace libraryapp
 {
     public class EX
     {
-        public static bool Admin = false;
-        public static List<Books> books = DBConnect.GetBooks();
-        public static List<User> users = DBConnect.GetUsers();
-        public static List<Loans> loans = DBConnect.GetLoans();
+        public static int currentID = 0;
+        public static List<Books> books = DatabaseHandler.GetBooks();
+        public static List<User> users = DatabaseHandler.GetUsers();
+        public static List<Loans> loans = DatabaseHandler.GetLoans();
         public static List<string> bookCategories = new List<string>
         {
             "Fiction",
@@ -75,6 +75,19 @@ namespace libraryapp
             }
             return false;
         }
+        public static void updatePassword(string pass)
+        {
+            users[UserIndex(currentID)].Password = pass;
+            DatabaseHandler.UpdatePassword(currentID, pass);
+        }
+        public static int GetID(string username)
+        {
+            foreach (var user in users)
+            {
+                if (user.UserLogin == username) return user.Uid;
+            }
+            return -1;
+        }
         public static int BookTotal()
         {
             return books.Count;
@@ -129,7 +142,7 @@ namespace libraryapp
         public static void addLoan(int bookid, int userid) {
             loans.Add(new Loans(NewLoanId(), userid, bookid));
             books[BookIndex(bookid)].Number = books[BookIndex(bookid)].Number - 1;
-            DBConnect.AddLoans(loans.Last());
+            DatabaseHandler.AddLoans(loans.Last());
         }
         public static void addReturn(int loanid, int bookid)
         {
@@ -138,7 +151,7 @@ namespace libraryapp
             {
                 books[BookIndex(bookid)].Number = books[BookIndex(bookid)].Number + 1;
                 loans[index].ReturnTime = DateTime.Now;
-                DBConnect.AddReturn(loanid);
+                DatabaseHandler.AddReturn(loanid);
             }
           
            
@@ -147,12 +160,12 @@ namespace libraryapp
         {
             users[UserIndex(userid)].Name = name;
             users[UserIndex(userid)].Addr = addr;
-            DBConnect.UpdateUser(users[UserIndex(userid)]);
+            DatabaseHandler.UpdateUser(users[UserIndex(userid)]);
         }
         public static void DeleteUser(int userid)
         {
             users.RemoveAt(UserIndex(userid));
-            DBConnect.DeleteUser(userid);
+            DatabaseHandler.DeleteUser(userid);
         }
         public static void UpdateBook(int bookid, string tile, string author, int cate, int total)
         {
@@ -160,12 +173,12 @@ namespace libraryapp
             books[BookIndex(bookid)].Name = tile;
             books[BookIndex(bookid)].Author = author;
             books[BookIndex(bookid)].Number = total;
-            DBConnect.UpdateBook(books[BookIndex(bookid)]);
+            DatabaseHandler.UpdateBook(books[BookIndex(bookid)]);
         }
         public static void DeleteBook(int BookID)
         {
             books.RemoveAt(BookIndex(BookID));
-            DBConnect.DeleteBook(BookID);
+            DatabaseHandler.DeleteBook(BookID);
         }
     }
 }
