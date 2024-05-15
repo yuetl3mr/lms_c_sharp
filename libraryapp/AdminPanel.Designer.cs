@@ -160,6 +160,7 @@
             button5.ForeColor = Color.Transparent;
             button5.Name = "button5";
             button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
             // 
             // button4
             // 
