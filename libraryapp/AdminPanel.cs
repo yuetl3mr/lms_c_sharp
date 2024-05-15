@@ -154,5 +154,19 @@ namespace libraryapp
             this.formLoader.Controls.Add(loanlistform);
             loanlistform.Show();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.formLoader.Controls.Clear();
+            frmUserManage usermanageform = new frmUserManage()
+            {
+                Dock = DockStyle.Fill,
+                TopLevel = false,
+                TopMost = true
+            };
+            usermanageform.FormBorderStyle = FormBorderStyle.None;
+            this.formLoader.Controls.Add(usermanageform);
+            usermanageform.Show();
+        }
     }
 }

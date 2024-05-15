@@ -188,6 +188,7 @@
             button3.Image = Properties.Resources.profile__1_;
             button3.Name = "button3";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // formLoader
             // 
