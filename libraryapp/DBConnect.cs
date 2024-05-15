@@ -134,22 +134,22 @@ namespace libraryapp
             }
         }
 
-        public static void AddBooks(List<Books> books)
+        public static void AddBooks(Books book)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                foreach (Books book in books)
-                {
-                    string query = "INSERT INTO Books (bName, CategoryID, bAuthor, Number, bPublication) VALUES (@Name, @CategoryID, @Author, @Number, @Publication)";
+                
+                    string query = "INSERT INTO Books (BookID ,bName, CategoryID, bAuthor, Number, bPublication) VALUES (@BookID ,@Name, @CategoryID, @Author, @Number, @Publication)";
                     SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@BookID", book.BookID);
                     command.Parameters.AddWithValue("@Name", book.Name);
-                    command.Parameters.AddWithValue("@CategoryID", book.CategoryID);                    command.Parameters.AddWithValue("@CategoryID", book.CategoryID);
+                    command.Parameters.AddWithValue("@CategoryID", book.CategoryID);                    
                     command.Parameters.AddWithValue("@Number", book.Number);
                     command.Parameters.AddWithValue("@Author", book.Author);
                     command.Parameters.AddWithValue("@Publication", book.Publication);
                     command.ExecuteNonQuery();
-                }
+               
             }
         }
 
@@ -204,6 +204,7 @@ namespace libraryapp
                 connection.Open();
                 string query = "UPDATE Books SET bName = @Name, CategoryID = @Category, bAuthor = @Author, Number = @Number WHERE BookID = @BookId";
                 SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@BookId", book.BookID);
                 command.Parameters.AddWithValue("@Name", book.Name);
                 command.Parameters.AddWithValue("@Category", book.CategoryID);
                 command.Parameters.AddWithValue("@Author", book.Author);
@@ -222,5 +223,18 @@ namespace libraryapp
                 command.ExecuteNonQuery();
             }
         }
+
+        public static void DeleteBook(int bookid)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "DELETE FROM Books WHERE BookID = @ID";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@ID", bookid);
+                command.ExecuteNonQuery();
+            }
+        }
+
     }
 }

@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBookManage));
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             label2 = new Label();
             btDelete = new Button();
             btEdit = new Button();
@@ -71,6 +71,7 @@
             btDelete.TabIndex = 39;
             btDelete.Text = "Delete";
             btDelete.UseVisualStyleBackColor = false;
+            btDelete.Click += btDelete_Click;
             // 
             // btEdit
             // 
@@ -107,30 +108,30 @@
             // 
             BookTable.AllowUserToAddRows = false;
             BookTable.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(50, 55, 63);
-            dataGridViewCellStyle4.Font = new Font("Arial", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(224, 224, 224);
-            BookTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(50, 55, 63);
+            dataGridViewCellStyle1.Font = new Font("Arial", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(224, 224, 224);
+            BookTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             BookTable.BackgroundColor = Color.FromArgb(50, 55, 63);
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(50, 55, 63);
-            dataGridViewCellStyle5.Font = new Font("Arial", 7.8F);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.ButtonShadow;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            BookTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(50, 55, 63);
+            dataGridViewCellStyle2.Font = new Font("Arial", 7.8F);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.ButtonShadow;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            BookTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             BookTable.ColumnHeadersHeight = 29;
             BookTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             BookTable.Columns.AddRange(new DataGridViewColumn[] { BookIDColumn, BookNameColumn, AuthorColumn, CategoryColumn, NumberColumn, selectedColumn });
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(50, 55, 63);
-            dataGridViewCellStyle6.Font = new Font("Arial", 7.8F);
-            dataGridViewCellStyle6.ForeColor = Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = SystemColors.ButtonShadow;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            BookTable.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(50, 55, 63);
+            dataGridViewCellStyle3.Font = new Font("Arial", 7.8F);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.ButtonShadow;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            BookTable.DefaultCellStyle = dataGridViewCellStyle3;
             BookTable.EnableHeadersVisualStyles = false;
             BookTable.Location = new Point(58, 166);
             BookTable.Name = "BookTable";
@@ -201,6 +202,7 @@
             button1.TabIndex = 40;
             button1.Text = "Add";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // frmBookManage
             // 

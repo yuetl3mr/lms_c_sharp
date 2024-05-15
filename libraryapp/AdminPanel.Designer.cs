@@ -45,6 +45,8 @@
             button4 = new Button();
             panel4 = new Panel();
             button3 = new Button();
+            panel5 = new Panel();
+            button8 = new Button();
             formLoader = new Panel();
             sidebarTimer = new System.Windows.Forms.Timer(components);
             LoanTimer = new System.Windows.Forms.Timer(components);
@@ -55,6 +57,7 @@
             panel3.SuspendLayout();
             LoanContainer.SuspendLayout();
             panel4.SuspendLayout();
+            panel5.SuspendLayout();
             SuspendLayout();
             // 
             // sidebar
@@ -65,6 +68,7 @@
             sidebar.Controls.Add(panel3);
             sidebar.Controls.Add(LoanContainer);
             sidebar.Controls.Add(panel4);
+            sidebar.Controls.Add(panel5);
             resources.ApplyResources(sidebar, "sidebar");
             sidebar.Name = "sidebar";
             // 
@@ -191,6 +195,22 @@
             button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
             // 
+            // panel5
+            // 
+            panel5.BackColor = Color.FromArgb(255, 192, 128);
+            panel5.Controls.Add(button8);
+            resources.ApplyResources(panel5, "panel5");
+            panel5.Name = "panel5";
+            // 
+            // button8
+            // 
+            button8.BackColor = Color.FromArgb(34, 40, 49);
+            resources.ApplyResources(button8, "button8");
+            button8.ForeColor = Color.Transparent;
+            button8.Name = "button8";
+            button8.UseVisualStyleBackColor = false;
+            button8.Click += button8_Click;
+            // 
             // formLoader
             // 
             formLoader.BackColor = Color.FromArgb(57, 62, 70);
@@ -223,6 +243,7 @@
             panel3.ResumeLayout(false);
             LoanContainer.ResumeLayout(false);
             panel4.ResumeLayout(false);
+            panel5.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -246,5 +267,7 @@
         private Panel formLoader;
         private System.Windows.Forms.Timer sidebarTimer;
         private System.Windows.Forms.Timer LoanTimer;
+        private Panel panel5;
+        private Button button8;
     }
 }

@@ -9,6 +9,15 @@ namespace libraryapp
     public class Books
     {
         public Books() { }
+        public Books(int bookID, string name, int categoryID, int number, string author, DateTime publication)
+        {
+            BookID = bookID;
+            Name = name;
+            CategoryID = categoryID;
+            Number = number;
+            Author = author;
+            Publication = publication;
+        }
         public int BookID { get; set; }
         public string Name { get; set; }
         public int CategoryID { get; set; }

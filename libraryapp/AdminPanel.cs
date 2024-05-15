@@ -182,5 +182,11 @@ namespace libraryapp
             this.formLoader.Controls.Add(bookmanageform);
             bookmanageform.Show();
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new LoginForm().Show(); 
+        }
     }
 }

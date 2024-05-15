@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -42,6 +44,16 @@ namespace libraryapp
             foreach (var loan in loans)
             {
                 maxid = Math.Max(maxid, loan.LoanID);
+            }
+            return maxid + 1;
+        }
+
+        public static int NewBookId()
+        {
+            int maxid = 0;
+            foreach (var book in books)
+            {
+                maxid = Math.Max(maxid, book.BookID);
             }
             return maxid + 1;
         }
@@ -116,14 +128,15 @@ namespace libraryapp
         }
         public static void addLoan(int bookid, int userid) {
             loans.Add(new Loans(NewLoanId(), userid, bookid));
-            books[BookIndex(bookid)].Number--;
+            books[BookIndex(bookid)].Number = books[BookIndex(bookid)].Number - 1;
             DBConnect.AddLoans(loans.Last());
         }
-        public static void addReturn(int loanid)
+        public static void addReturn(int loanid, int bookid)
         {
             int index = LoanIndex(loanid);
             if (index != -1)
             {
+                books[BookIndex(bookid)].Number = books[BookIndex(bookid)].Number + 1;
                 loans[index].ReturnTime = DateTime.Now;
                 DBConnect.AddReturn(loanid);
             }
@@ -148,6 +161,11 @@ namespace libraryapp
             books[BookIndex(bookid)].Author = author;
             books[BookIndex(bookid)].Number = total;
             DBConnect.UpdateBook(books[BookIndex(bookid)]);
+        }
+        public static void DeleteBook(int BookID)
+        {
+            books.RemoveAt(BookIndex(BookID));
+            DBConnect.DeleteBook(BookID);
         }
     }
 }

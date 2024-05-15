@@ -50,7 +50,8 @@ namespace libraryapp
                 if (isSelected)
                 {
                     int loanid = Convert.ToInt32(row.Cells["LoanIdColumn"].Value);
-                    EX.addReturn(loanid);
+                    int bookid = Convert.ToInt32(row.Cells["BookIdColumn"].Value);
+                    EX.addReturn(loanid, bookid);
                 }
             }
             MessageBox.Show("Success");
