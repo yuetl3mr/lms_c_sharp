@@ -51,11 +51,11 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("0xProto Nerd Font Mono", 24F, FontStyle.Bold, GraphicsUnit.Point, 255);
+            label2.Font = new Font("Nirmala UI", 24F, FontStyle.Bold);
             label2.ForeColor = Color.FromArgb(238, 238, 238);
-            label2.Location = new Point(21, 27);
+            label2.Location = new Point(43, 44);
             label2.Name = "label2";
-            label2.Size = new Size(384, 48);
+            label2.Size = new Size(317, 54);
             label2.TabIndex = 17;
             label2.Text = "Book Returning";
             // 

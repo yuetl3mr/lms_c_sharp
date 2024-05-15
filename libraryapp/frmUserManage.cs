@@ -42,5 +42,56 @@ namespace libraryapp
             }
             else AddDataTable();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            bool success = false;
+            foreach (DataGridViewRow row in userTable.Rows)
+            {
+                bool isSelected = Convert.ToBoolean(row.Cells[5].Value);
+                if (isSelected)
+                {
+                    int userid = Convert.ToInt32(row.Cells[0].Value);
+                    string? Name = row.Cells[2].Value?.ToString();
+                    string? Addr = row.Cells[3].Value?.ToString();
+                    if (Name != null && Addr != null)
+                    {
+                        EX.UpdateUser(userid, Name, Addr);
+                        success = true;
+                    }
+                    else
+                    {
+                        success = false;
+                        MessageBox.Show("Please do not leave columns blank!");
+                    }
+                }
+            }
+            if (success)
+            {
+                MessageBox.Show("Edit Success!");
+            }
+            AddDataTable();
+        }
+
+        private void btDelete_Click(object sender, EventArgs e)
+        {
+            bool success = false;
+            foreach (DataGridViewRow row in userTable.Rows)
+            {
+                bool isSelected = Convert.ToBoolean(row.Cells[5].Value);
+                if (isSelected)
+                {
+                    int userid = Convert.ToInt32(row.Cells[0].Value);
+                    EX.DeleteUser(userid);
+                    success = true;
+
+                }
+            }
+            if (success)
+            {
+                MessageBox.Show("Delete Success!");
+            }
+            AddDataTable();
+        }
     }
 }

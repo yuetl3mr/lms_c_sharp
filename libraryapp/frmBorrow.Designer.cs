@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBorrow));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             txtBookSearch = new TextBox();
             pictureBox1 = new PictureBox();
             label2 = new Label();
@@ -75,77 +75,77 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("0xProto Nerd Font Mono", 24F, FontStyle.Bold, GraphicsUnit.Point, 255);
+            label2.Font = new Font("Nirmala UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(238, 238, 238);
-            label2.Location = new Point(37, 33);
+            label2.Location = new Point(43, 44);
             label2.Name = "label2";
-            label2.Size = new Size(384, 48);
+            label2.Size = new Size(327, 54);
             label2.TabIndex = 16;
             label2.Text = "Book Borrowing";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("0xProto Nerd Font", 9F, FontStyle.Regular, GraphicsUnit.Point, 255);
+            label1.Font = new Font("Nirmala UI", 9F, FontStyle.Bold);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(271, 333);
+            label1.Location = new Point(278, 334);
             label1.Name = "label1";
-            label1.Size = new Size(107, 18);
+            label1.Size = new Size(92, 20);
             label1.TabIndex = 17;
             label1.Text = "Username : ";
             // 
             // UserNameLabel
             // 
             UserNameLabel.AutoSize = true;
-            UserNameLabel.Font = new Font("0xProto Nerd Font", 9F);
+            UserNameLabel.Font = new Font("Nirmala UI", 9F);
             UserNameLabel.ForeColor = Color.White;
-            UserNameLabel.Location = new Point(378, 333);
+            UserNameLabel.Location = new Point(385, 334);
             UserNameLabel.Name = "UserNameLabel";
-            UserNameLabel.Size = new Size(0, 18);
+            UserNameLabel.Size = new Size(0, 20);
             UserNameLabel.TabIndex = 18;
             // 
             // bookTable
             // 
             bookTable.AllowUserToAddRows = false;
             bookTable.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(50, 55, 63);
-            dataGridViewCellStyle1.Font = new Font("Arial", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(224, 224, 224);
-            bookTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(50, 55, 63);
+            dataGridViewCellStyle5.Font = new Font("Arial", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(224, 224, 224);
+            bookTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             bookTable.BackgroundColor = Color.FromArgb(50, 55, 63);
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(50, 55, 63);
-            dataGridViewCellStyle2.Font = new Font("0xProto Nerd Font Mono", 7.79999971F, FontStyle.Bold, GraphicsUnit.Point, 255);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.ButtonShadow;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            bookTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(50, 55, 63);
+            dataGridViewCellStyle6.Font = new Font("0xProto Nerd Font Mono", 7.79999971F, FontStyle.Bold, GraphicsUnit.Point, 255);
+            dataGridViewCellStyle6.ForeColor = Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.ButtonShadow;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
+            bookTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             bookTable.ColumnHeadersHeight = 29;
             bookTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             bookTable.Columns.AddRange(new DataGridViewColumn[] { BookIdColumn, BookNameColumn, BookAuthorColumn, CategoryColumn, BookSelect });
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(50, 55, 63);
-            dataGridViewCellStyle3.Font = new Font("Arial", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.ButtonShadow;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            bookTable.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = Color.FromArgb(50, 55, 63);
+            dataGridViewCellStyle7.Font = new Font("Arial", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle7.ForeColor = Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = SystemColors.ButtonShadow;
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
+            bookTable.DefaultCellStyle = dataGridViewCellStyle7;
             bookTable.EnableHeadersVisualStyles = false;
-            bookTable.Location = new Point(107, 169);
+            bookTable.Location = new Point(94, 169);
             bookTable.Name = "bookTable";
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = SystemColors.Control;
-            dataGridViewCellStyle4.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            bookTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = SystemColors.Control;
+            dataGridViewCellStyle8.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle8.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
+            bookTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             bookTable.RowHeadersVisible = false;
             bookTable.RowHeadersWidth = 51;
-            bookTable.Size = new Size(542, 148);
+            bookTable.Size = new Size(555, 152);
             bookTable.TabIndex = 19;
             // 
             // BookIdColumn
@@ -195,29 +195,30 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("0xProto Nerd Font", 9F);
+            label4.Font = new Font("Nirmala UI", 9F, FontStyle.Bold);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(464, 333);
+            label4.Location = new Point(278, 371);
             label4.Name = "label4";
-            label4.Size = new Size(71, 18);
+            label4.Size = new Size(63, 20);
             label4.TabIndex = 20;
             label4.Text = "Name : ";
             // 
             // NameLabel
             // 
             NameLabel.AutoSize = true;
-            NameLabel.Font = new Font("0xProto Nerd Font", 9F);
+            NameLabel.Font = new Font("Nirmala UI", 9F);
             NameLabel.ForeColor = Color.White;
-            NameLabel.Location = new Point(541, 333);
+            NameLabel.Location = new Point(355, 371);
             NameLabel.Name = "NameLabel";
-            NameLabel.Size = new Size(0, 18);
+            NameLabel.Size = new Size(0, 20);
             NameLabel.TabIndex = 21;
             // 
             // txtUserSearch
             // 
-            txtUserSearch.Location = new Point(107, 333);
+            txtUserSearch.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtUserSearch.Location = new Point(94, 334);
             txtUserSearch.Name = "txtUserSearch";
-            txtUserSearch.Size = new Size(125, 27);
+            txtUserSearch.Size = new Size(125, 25);
             txtUserSearch.TabIndex = 22;
             // 
             // label6
@@ -236,9 +237,9 @@
             button1.BackColor = Color.FromArgb(57, 62, 70);
             button1.Font = new Font("0xProto Nerd Font", 9F, FontStyle.Regular, GraphicsUnit.Point, 255);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(107, 366);
+            button1.Location = new Point(94, 371);
             button1.Name = "button1";
-            button1.Size = new Size(61, 29);
+            button1.Size = new Size(125, 29);
             button1.TabIndex = 24;
             button1.Text = "Check";
             button1.UseVisualStyleBackColor = false;
@@ -249,7 +250,7 @@
             btConfirm.BackColor = Color.FromArgb(57, 62, 70);
             btConfirm.Font = new Font("0xProto Nerd Font", 9F, FontStyle.Regular, GraphicsUnit.Point, 255);
             btConfirm.ForeColor = Color.White;
-            btConfirm.Location = new Point(204, 418);
+            btConfirm.Location = new Point(260, 418);
             btConfirm.Name = "btConfirm";
             btConfirm.Size = new Size(193, 29);
             btConfirm.TabIndex = 25;

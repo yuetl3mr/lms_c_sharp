@@ -130,5 +130,24 @@ namespace libraryapp
           
            
         }
+        public static void UpdateUser(int userid,string name, string addr)
+        {
+            users[UserIndex(userid)].Name = name;
+            users[UserIndex(userid)].Addr = addr;
+            DBConnect.UpdateUser(users[UserIndex(userid)]);
+        }
+        public static void DeleteUser(int userid)
+        {
+            users.RemoveAt(UserIndex(userid));
+            DBConnect.DeleteUser(userid);
+        }
+        public static void UpdateBook(int bookid, string tile, string author, int cate, int total)
+        {
+            books[BookIndex(bookid)].CategoryID = cate;
+            books[BookIndex(bookid)].Name = tile;
+            books[BookIndex(bookid)].Author = author;
+            books[BookIndex(bookid)].Number = total;
+            DBConnect.UpdateBook(books[BookIndex(bookid)]);
+        }
     }
 }

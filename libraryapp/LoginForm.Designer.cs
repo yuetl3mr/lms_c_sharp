@@ -60,11 +60,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("0xProto Nerd Font Propo", 24F, FontStyle.Bold, GraphicsUnit.Point, 255);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(76, 99);
+            label1.Font = new Font("Nirmala UI", 24F, FontStyle.Bold);
+            label1.ForeColor = Color.FromArgb(0, 173, 181);
+            label1.Location = new Point(81, 113);
             label1.Name = "label1";
-            label1.Size = new Size(150, 48);
+            label1.Size = new Size(127, 54);
             label1.TabIndex = 1;
             label1.Text = "Login";
             label1.Click += label1_Click;
@@ -142,7 +142,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Emoji", 7.20000029F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.ActiveBorder;
-            label2.Location = new Point(46, 383);
+            label2.Location = new Point(46, 382);
             label2.Name = "label2";
             label2.Size = new Size(125, 17);
             label2.TabIndex = 10;
@@ -153,7 +153,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 7.20000029F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.FromArgb(0, 173, 181);
-            label3.Location = new Point(177, 383);
+            label3.Location = new Point(177, 382);
             label3.Name = "label3";
             label3.Size = new Size(52, 17);
             label3.TabIndex = 11;

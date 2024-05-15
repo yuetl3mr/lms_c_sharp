@@ -121,6 +121,7 @@
             button2.Image = Properties.Resources.open_book;
             button2.Name = "button2";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // LoanContainer
             // 

@@ -31,7 +31,6 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUserManage));
             label2 = new Label();
             userTable = new DataGridView();
@@ -40,10 +39,11 @@
             NameColumn = new DataGridViewTextBoxColumn();
             AddrColumn = new DataGridViewTextBoxColumn();
             GenderColumn = new DataGridViewTextBoxColumn();
-            btEdit = new DataGridViewButtonColumn();
-            btDelete = new DataGridViewButtonColumn();
+            selectedColumn = new DataGridViewCheckBoxColumn();
             pictureBox1 = new PictureBox();
             txtUserSearch = new TextBox();
+            btEdit = new Button();
+            btDelete = new Button();
             ((System.ComponentModel.ISupportInitialize)userTable).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -51,11 +51,11 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("0xProto Nerd Font Mono", 24F, FontStyle.Bold, GraphicsUnit.Point, 255);
+            label2.Font = new Font("Nirmala UI", 24F, FontStyle.Bold);
             label2.ForeColor = Color.FromArgb(238, 238, 238);
             label2.Location = new Point(43, 44);
             label2.Name = "label2";
-            label2.Size = new Size(332, 48);
+            label2.Size = new Size(290, 54);
             label2.TabIndex = 19;
             label2.Text = "Users Manage";
             // 
@@ -70,7 +70,7 @@
             userTable.BackgroundColor = Color.FromArgb(50, 55, 63);
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(50, 55, 63);
-            dataGridViewCellStyle2.Font = new Font("0xProto Nerd Font Mono", 7.79999971F, FontStyle.Bold, GraphicsUnit.Point, 255);
+            dataGridViewCellStyle2.Font = new Font("Arial", 7.8F);
             dataGridViewCellStyle2.ForeColor = Color.White;
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.ButtonShadow;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
@@ -78,29 +78,21 @@
             userTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             userTable.ColumnHeadersHeight = 29;
             userTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            userTable.Columns.AddRange(new DataGridViewColumn[] { UserIDColumn, UserNameColumn, NameColumn, AddrColumn, GenderColumn, btEdit, btDelete });
+            userTable.Columns.AddRange(new DataGridViewColumn[] { UserIDColumn, UserNameColumn, NameColumn, AddrColumn, GenderColumn, selectedColumn });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.FromArgb(50, 55, 63);
-            dataGridViewCellStyle3.Font = new Font("Arial", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.Font = new Font("Arial", 7.8F);
             dataGridViewCellStyle3.ForeColor = Color.White;
             dataGridViewCellStyle3.SelectionBackColor = SystemColors.ButtonShadow;
             dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             userTable.DefaultCellStyle = dataGridViewCellStyle3;
             userTable.EnableHeadersVisualStyles = false;
-            userTable.Location = new Point(55, 201);
+            userTable.Location = new Point(67, 172);
             userTable.Name = "userTable";
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = SystemColors.Control;
-            dataGridViewCellStyle4.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            userTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             userTable.RowHeadersVisible = false;
             userTable.RowHeadersWidth = 51;
-            userTable.Size = new Size(627, 176);
+            userTable.Size = new Size(618, 176);
             userTable.TabIndex = 29;
             // 
             // UserIDColumn
@@ -109,6 +101,7 @@
             UserIDColumn.HeaderText = "ID";
             UserIDColumn.MinimumWidth = 6;
             UserIDColumn.Name = "UserIDColumn";
+            UserIDColumn.ReadOnly = true;
             UserIDColumn.Resizable = DataGridViewTriState.False;
             UserIDColumn.Width = 55;
             // 
@@ -118,6 +111,8 @@
             UserNameColumn.HeaderText = "UserName";
             UserNameColumn.MinimumWidth = 6;
             UserNameColumn.Name = "UserNameColumn";
+            UserNameColumn.ReadOnly = true;
+            UserNameColumn.Resizable = DataGridViewTriState.False;
             UserNameColumn.Width = 125;
             // 
             // NameColumn
@@ -127,7 +122,7 @@
             NameColumn.MinimumWidth = 6;
             NameColumn.Name = "NameColumn";
             NameColumn.Resizable = DataGridViewTriState.False;
-            NameColumn.Width = 175;
+            NameColumn.Width = 150;
             // 
             // AddrColumn
             // 
@@ -136,7 +131,7 @@
             AddrColumn.MinimumWidth = 6;
             AddrColumn.Name = "AddrColumn";
             AddrColumn.Resizable = DataGridViewTriState.False;
-            AddrColumn.Width = 125;
+            AddrColumn.Width = 150;
             // 
             // GenderColumn
             // 
@@ -145,26 +140,20 @@
             GenderColumn.MinimumWidth = 6;
             GenderColumn.Name = "GenderColumn";
             GenderColumn.ReadOnly = true;
-            GenderColumn.Width = 70;
+            GenderColumn.Resizable = DataGridViewTriState.False;
+            GenderColumn.Width = 60;
             // 
-            // btEdit
+            // selectedColumn
             // 
-            btEdit.HeaderText = "Edit";
-            btEdit.MinimumWidth = 6;
-            btEdit.Name = "btEdit";
-            btEdit.Width = 70;
-            // 
-            // btDelete
-            // 
-            btDelete.HeaderText = "Delete";
-            btDelete.MinimumWidth = 6;
-            btDelete.Name = "btDelete";
-            btDelete.Width = 70;
+            selectedColumn.HeaderText = "-";
+            selectedColumn.MinimumWidth = 6;
+            selectedColumn.Name = "selectedColumn";
+            selectedColumn.Width = 50;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(673, 145);
+            pictureBox1.Location = new Point(642, 124);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(32, 33);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -174,10 +163,36 @@
             // 
             // txtUserSearch
             // 
-            txtUserSearch.Location = new Point(477, 151);
+            txtUserSearch.Location = new Point(444, 130);
             txtUserSearch.Name = "txtUserSearch";
             txtUserSearch.Size = new Size(182, 27);
             txtUserSearch.TabIndex = 31;
+            // 
+            // btEdit
+            // 
+            btEdit.BackColor = Color.FromArgb(57, 62, 70);
+            btEdit.Font = new Font("0xProto Nerd Font", 9F, FontStyle.Regular, GraphicsUnit.Point, 255);
+            btEdit.ForeColor = Color.White;
+            btEdit.Location = new Point(239, 372);
+            btEdit.Name = "btEdit";
+            btEdit.Size = new Size(94, 29);
+            btEdit.TabIndex = 33;
+            btEdit.Text = "Edit";
+            btEdit.UseVisualStyleBackColor = false;
+            btEdit.Click += button1_Click;
+            // 
+            // btDelete
+            // 
+            btDelete.BackColor = Color.FromArgb(57, 62, 70);
+            btDelete.Font = new Font("0xProto Nerd Font", 9F, FontStyle.Regular, GraphicsUnit.Point, 255);
+            btDelete.ForeColor = Color.White;
+            btDelete.Location = new Point(383, 372);
+            btDelete.Name = "btDelete";
+            btDelete.Size = new Size(94, 29);
+            btDelete.TabIndex = 34;
+            btDelete.Text = "Delete";
+            btDelete.UseVisualStyleBackColor = false;
+            btDelete.Click += btDelete_Click;
             // 
             // frmUserManage
             // 
@@ -185,6 +200,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(57, 62, 70);
             ClientSize = new Size(744, 474);
+            Controls.Add(btDelete);
+            Controls.Add(btEdit);
             Controls.Add(pictureBox1);
             Controls.Add(txtUserSearch);
             Controls.Add(userTable);
@@ -204,12 +221,13 @@
         private DataGridView userTable;
         private PictureBox pictureBox1;
         private TextBox txtUserSearch;
+        private Button btEdit;
+        private Button btDelete;
         private DataGridViewTextBoxColumn UserIDColumn;
         private DataGridViewTextBoxColumn UserNameColumn;
         private DataGridViewTextBoxColumn NameColumn;
         private DataGridViewTextBoxColumn AddrColumn;
         private DataGridViewTextBoxColumn GenderColumn;
-        private DataGridViewButtonColumn btEdit;
-        private DataGridViewButtonColumn btDelete;
+        private DataGridViewCheckBoxColumn selectedColumn;
     }
 }

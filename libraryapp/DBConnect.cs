@@ -1,3 +1,4 @@
+using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -181,10 +182,45 @@ namespace libraryapp
                 command.Parameters.AddWithValue("@LoanID", loanid);
                 command.ExecuteNonQuery();
             }
-
         }
 
-
-
+        public static void UpdateUser(User user)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "UPDATE Users SET uName = @Name, Addrs = @Addr WHERE UserID = @Uid";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@Name", user.Name);
+                command.Parameters.AddWithValue("@Uid", user.Uid);
+                command.Parameters.AddWithValue("@Addr", user.Addr);
+                command.ExecuteNonQuery();
+            }
+        }
+        public static void UpdateBook(Books book)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "UPDATE Books SET bName = @Name, CategoryID = @Category, bAuthor = @Author, Number = @Number WHERE BookID = @BookId";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@Name", book.Name);
+                command.Parameters.AddWithValue("@Category", book.CategoryID);
+                command.Parameters.AddWithValue("@Author", book.Author);
+                command.Parameters.AddWithValue("@Number", book.Number);
+                command.ExecuteNonQuery();
+            }
+        }
+        public static void DeleteUser(int uid)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "DELETE FROM Users WHERE UserID = @Uid";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@Uid", uid);
+                command.ExecuteNonQuery();
+            }
+        }
     }
 }

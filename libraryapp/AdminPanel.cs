@@ -168,5 +168,19 @@ namespace libraryapp
             this.formLoader.Controls.Add(usermanageform);
             usermanageform.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.formLoader.Controls.Clear();
+            frmBookManage bookmanageform = new frmBookManage()
+            {
+                Dock = DockStyle.Fill,
+                TopLevel = false,
+                TopMost = true
+            };
+            bookmanageform.FormBorderStyle = FormBorderStyle.None;
+            this.formLoader.Controls.Add(bookmanageform);
+            bookmanageform.Show();
+        }
     }
 }

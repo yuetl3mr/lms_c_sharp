@@ -42,7 +42,6 @@
             UserIdColumn = new DataGridViewTextBoxColumn();
             BorrowTimeColumn = new DataGridViewTextBoxColumn();
             ReturnTimeColumn = new DataGridViewTextBoxColumn();
-            LoanSelect = new DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)loanTable).BeginInit();
             SuspendLayout();
@@ -50,11 +49,11 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("0xProto Nerd Font Mono", 24F, FontStyle.Bold, GraphicsUnit.Point, 255);
+            label2.Font = new Font("Nirmala UI", 24F, FontStyle.Bold);
             label2.ForeColor = Color.FromArgb(238, 238, 238);
-            label2.Location = new Point(51, 38);
+            label2.Location = new Point(43, 44);
             label2.Name = "label2";
-            label2.Size = new Size(254, 48);
+            label2.Size = new Size(188, 54);
             label2.TabIndex = 18;
             label2.Text = "Loan List";
             // 
@@ -95,7 +94,7 @@
             loanTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             loanTable.ColumnHeadersHeight = 29;
             loanTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            loanTable.Columns.AddRange(new DataGridViewColumn[] { LoanIdColumn, BookIdColumn, UserIdColumn, BorrowTimeColumn, ReturnTimeColumn, LoanSelect });
+            loanTable.Columns.AddRange(new DataGridViewColumn[] { LoanIdColumn, BookIdColumn, UserIdColumn, BorrowTimeColumn, ReturnTimeColumn });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.FromArgb(50, 55, 63);
             dataGridViewCellStyle3.Font = new Font("Arial", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -105,7 +104,7 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             loanTable.DefaultCellStyle = dataGridViewCellStyle3;
             loanTable.EnableHeadersVisualStyles = false;
-            loanTable.Location = new Point(48, 207);
+            loanTable.Location = new Point(61, 207);
             loanTable.Name = "loanTable";
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = SystemColors.Control;
@@ -117,7 +116,7 @@
             loanTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             loanTable.RowHeadersVisible = false;
             loanTable.RowHeadersWidth = 51;
-            loanTable.Size = new Size(659, 176);
+            loanTable.Size = new Size(639, 176);
             loanTable.TabIndex = 28;
             // 
             // LoanIdColumn
@@ -165,14 +164,6 @@
             ReturnTimeColumn.ReadOnly = true;
             ReturnTimeColumn.Width = 125;
             // 
-            // LoanSelect
-            // 
-            LoanSelect.Frozen = true;
-            LoanSelect.HeaderText = "-";
-            LoanSelect.MinimumWidth = 6;
-            LoanSelect.Name = "LoanSelect";
-            LoanSelect.Width = 30;
-            // 
             // frmLoanList
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -203,6 +194,5 @@
         private DataGridViewTextBoxColumn UserIdColumn;
         private DataGridViewTextBoxColumn BorrowTimeColumn;
         private DataGridViewTextBoxColumn ReturnTimeColumn;
-        private DataGridViewCheckBoxColumn LoanSelect;
     }
 }

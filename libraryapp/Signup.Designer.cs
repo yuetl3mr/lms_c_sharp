@@ -49,11 +49,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("0xProto Nerd Font Mono", 16.1999989F, FontStyle.Bold, GraphicsUnit.Point, 255);
+            label1.Font = new Font("Nirmala UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
             label1.Location = new Point(12, 23);
             label1.Name = "label1";
-            label1.Size = new Size(212, 32);
+            label1.Size = new Size(179, 41);
             label1.TabIndex = 0;
             label1.Text = "Get Started";
             label1.Click += label1_Click;
@@ -187,13 +187,13 @@
             maleButton.Name = "maleButton";
             maleButton.Size = new Size(56, 19);
             maleButton.TabIndex = 13;
-            maleButton.TabStop = true;
             maleButton.Text = "Male";
             maleButton.UseVisualStyleBackColor = true;
             // 
             // femaleButton
             // 
             femaleButton.AutoSize = true;
+            femaleButton.Checked = true;
             femaleButton.Font = new Font("UD Digi Kyokasho N-B", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 128);
             femaleButton.ForeColor = Color.White;
             femaleButton.Location = new Point(179, 395);
