@@ -52,7 +52,7 @@ namespace libraryapp
         {
             int gender = maleButton.Checked ? 1 : 0;
             Regex regex = new Regex("^[a-zA-Z0-9]*$");
-            if (EX.ValidUsername(txtUserName.Text) && regex.IsMatch(txtUserName.Text))
+            if (EX.ValidUsername(txtUserName.Text) && regex.IsMatch(txtUserName.Text) && txtAddress.Text != "")
             {
                 if (txtConfirmPassword.Text == txtPassword.Text)
                 {

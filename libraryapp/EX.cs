@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace libraryapp
@@ -95,8 +96,7 @@ namespace libraryapp
         }
         public static int UserTotal()
         {
-            return users.Count;
-            
+            return users.Count;   
         }
         public static int UserIndex(int uid)
         {
@@ -179,6 +179,21 @@ namespace libraryapp
         {
             books.RemoveAt(BookIndex(BookID));
             DatabaseHandler.DeleteBook(BookID);
+        }
+        public static void JsonExport()
+        {
+            string booksjsonString = JsonSerializer.Serialize(books, new JsonSerializerOptions { WriteIndented = true });
+            string usersjsonString = JsonSerializer.Serialize(users, new JsonSerializerOptions { WriteIndented = true });
+            string loanjsonString = JsonSerializer.Serialize(loans, new JsonSerializerOptions { WriteIndented = true });
+            
+            string filePathBooks = Path.Combine("C:/librarydata/", "books.json");
+            string filePathUsers = Path.Combine("C:/librarydata/", "users.json");
+            string filePathLoans = Path.Combine("C:/librarydata/", "loans.json");
+            
+            File.WriteAllText(filePathBooks, booksjsonString);
+            File.WriteAllText(filePathUsers, usersjsonString);
+            File.WriteAllText(filePathLoans, loanjsonString);
+
         }
     }
 }

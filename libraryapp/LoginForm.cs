@@ -80,7 +80,6 @@ namespace libraryapp
                 MessageBox.Show("Wrong Username or Password");
             }
         }
-
         private void label3_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -89,6 +88,7 @@ namespace libraryapp
 
         private void label4_Click(object sender, EventArgs e)
         {
+            EX.JsonExport();
             Application.Exit();
         }
     }

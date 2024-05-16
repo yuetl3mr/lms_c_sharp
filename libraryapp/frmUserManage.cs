@@ -84,7 +84,6 @@ namespace libraryapp
                     int userid = Convert.ToInt32(row.Cells[0].Value);
                     EX.DeleteUser(userid);
                     success = true;
-
                 }
             }
             if (success)

@@ -11,6 +11,7 @@ namespace libraryapp
         static void Main()
         {
             ApplicationConfiguration.Initialize();
+            EX.JsonExport();
             Application.Run(new LoginForm());
             //Application.Run(new AdminPanel());
         }

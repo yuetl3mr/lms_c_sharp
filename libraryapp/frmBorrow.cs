@@ -52,12 +52,23 @@ namespace libraryapp
         {
             if (txtBookSearch != null)
             {
-                int UserIndex = EX.UserIndex(int.Parse(txtUserSearch.Text));
-                if (UserIndex != -1)
+                try
                 {
-                    UserNameLabel.Text = EX.users[UserIndex].UserLogin;
-                    NameLabel.Text = EX.users[UserIndex].Name;
+                    int UserIndex = EX.UserIndex(int.Parse(txtUserSearch.Text));
+                    if (UserIndex != -1)
+                    {
+                        UserNameLabel.Text = EX.users[UserIndex].UserLogin;
+                        NameLabel.Text = EX.users[UserIndex].Name;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Not Found!");
+                    }
                 }
+                catch(Exception ex) { 
+                    MessageBox.Show(ex.Message);
+                }
+                
             }
         }
 

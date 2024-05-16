@@ -130,7 +130,6 @@ namespace libraryapp
                     command.Parameters.AddWithValue("@Password", user.Password);
                     command.Parameters.AddWithValue("@Role", user.Role);
                     command.ExecuteNonQuery();
-                
             }
         }
 
